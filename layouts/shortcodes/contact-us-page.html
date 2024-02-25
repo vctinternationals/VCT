@@ -1,0 +1,108 @@
+{{$common := site.Data.common}}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center py-5">
+        <h1 class="display-4 text-white animated slideInDown mb-4">Contact Us</h1>
+        <p class="mb-1">If You Have Any Query, Please Contact Us</p>
+        <p>We'd love to talk about how we can help you.</p>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <address class="row g-5">
+            <h3 class="card-title">India Office Address</h3>
+            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
+                <div class="card shadow h-100 text-center">
+                    <div class="card-body contact-page-details">
+                        <h3><i class="fa fa-map-marker-alt me-3"></i></h3>
+                        <p class="mb-4">{{$common.indiaCompanyDetails.address}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
+                <div class="card shadow h-100 text-center">
+                    <div class="card-body contact-page-details">
+                        <h3><i class="fa fa-envelope me-3"></i></h3>
+                        <h3 class="card-title">Email</h3>
+                        <a href='mailto:{{$common.indiaCompanyDetails.email}}'
+                            class="mb-4">{{$common.indiaCompanyDetails.email}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
+                <div class="card shadow h-100 text-center">
+                    <div class="card-body contact-page-details">
+                        <h3><i class="fa fa-phone-alt me-3"></i></h3>
+                        <h3 class="card-title">Phone Number</h3>
+                        <a href='tel:{{$common.indiaCompanyDetails.contactNumber}}'
+                            class="mb-1">{{$common.indiaCompanyDetails.contactNumber}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
+                <div class="card shadow h-100 text-center">
+                    <div class="card-body contact-page-details">
+                        <h3>
+                             <i class="fa-brands fa-whatsapp fa-lg me-3" style="color: #1b9333;"></i>
+                        </h3>
+                        <h3 class="card-title">whatsapp</h3>
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone={{$common.indiaCompanyDetails.whatsappNumberDetails.number}}"
+                            class="mb-1">{{$common.indiaCompanyDetails.whatsappNumberDetails.display}}</a>
+                    </div>
+                </div>
+            </div>
+        </address>
+    </div>
+    <hr />
+    <div class="container py-5">
+        <address class="row g-5">
+            <h3 class="card-title">Dubai Office Address</h3>
+            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
+                <div class="card shadow h-100 text-center">
+                    <div class="card-body contact-page-details">
+                        <h3><i class="fa fa-map-marker-alt me-3"></i></h3>
+                        <p class="mb-4">{{$common.dubaiCompanyDetails.address}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
+                <div class="card shadow h-100 text-center">
+                    <div class="card-body contact-page-details">
+                        <h3><i class="fa fa-envelope me-3"></i></h3>
+                        <h3 class="card-title">Email</h3>
+                        <a href='mailto:{{$common.dubaiCompanyDetails.email}}'
+                            class="mb-4">{{$common.dubaiCompanyDetails.email}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
+                <div class="card shadow h-100 text-center">
+                    <div class="card-body contact-page-details">
+                        <h3><i class="fa fa-phone-alt me-3"></i></h3>
+                        <h3 class="card-title">Phone Number</h3>
+                        <a href='tel:{{$common.dubaiCompanyDetails.contactNumber}}'
+                            class="mb-1">{{$common.dubaiCompanyDetails.contactNumber}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
+                <div class="card shadow h-100 text-center">
+                    <div class="card-body contact-page-details">
+                        <h3>
+                             <i class="fa-brands fa-whatsapp fa-lg me-3" style="color: #1b9333;"></i>
+                        </h3>
+                        <h3 class="card-title">whatsapp</h3>
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone={{$common.dubaiCompanyDetails.whatsappNumberDetails.number}}"
+                            class="mb-1">{{$common.dubaiCompanyDetails.whatsappNumberDetails.display}}</a>
+                    </div>
+                </div>
+            </div>
+        </address>
+    </div>
+</div>
+<!-- Contact End -->

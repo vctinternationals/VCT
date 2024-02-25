@@ -1,0 +1,29 @@
+{
+    "workingHours": "10:00 am - 07:00 pm",
+    "indiaCompanyDetails": {
+        "contactNumber": "+91 8688912223",
+        "whatsappNumberDetails":{
+            "number":"918688912223",
+            "display":"+91 8688912223"
+        },
+        "email": "info@vctinternationals.com",
+        "supportEmail":"support@vctinternationals.com",
+        "address": "2-1-49/1, Venkataramana Colony, Nagole, Hyderabad, Nagole, Hyderabad, Hyderabad, Telangana 500068"
+    },
+    "dubaiCompanyDetails": {
+        "contactNumber": "+971 523490577",
+        "whatsappNumberDetails":{
+            "number":"971523490577",
+            "display":"+971 523490577"
+        },
+        "email": "info@vctinternationals.com",
+        "supportEmail":"support@vctinternationals.com",
+        "address": "Hamsah A Building, Al Karama, Dubai"
+    },
+    "socialMediaHandlers": {
+        "facebook": "https://www.facebook.com/profile.php?id=61552644016905",
+        "youtube": "https://www.youtube.com/channel/UCRubLr0LlVH10G_XHoTUQ-g",
+        "linkedin": "https://www.linkedin.com/in/viranya-kumar-7b17a8179/",
+        "instagram": "https://www.instagram.com/vct_technical_services"
+    }
+}

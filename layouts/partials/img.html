@@ -1,0 +1,6 @@
+{{ $targetPath := . }}
+{{$class := ""}}
+{{ $image := .Resources.GetMatch $targetPath }}
+{{ with $image }}
+  <img src="{{ .RelPermalink }}" class="{{$class}}">
+{{ end }}
