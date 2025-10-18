@@ -2,6 +2,8 @@
   "baseURL": "https://vctinternationals.com/",
   "languageCode": "en-us",
   "title": "VCT Internationals - Technical Services",
+  "description": "VCT Internationals - Professional technical services in India and Dubai",
+  "author": "VCT Internationals",
   "markup": {
     "goldmark": {
       "renderer": {
