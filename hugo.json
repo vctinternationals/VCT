@@ -1,9 +1,7 @@
 {
   "baseURL": "https://vctinternationals.com/",
   "languageCode": "en-us",
-  "title": "VCT Internationals - Technical Services",
-  "description": "VCT Internationals - Professional technical services in India and Dubai",
-  "author": "VCT Internationals",
+  "title": "VCT Internationals HVAC Services",
   "markup": {
     "goldmark": {
       "renderer": {
@@ -12,42 +10,16 @@
     }
   },
   "params": {
-    "description": "VCT Internationals - Professional technical services in India and Dubai",
-    "author": "VCT Internationals",
-    "workingHours": "10:00 am - 07:00 pm"
-  },
-  "menu": {
-    "main": [
-      {
-        "name": "Home",
-        "url": "/"
-      },
-      {
-        "name": "About Us",
-        "url": "/about-us/"
-      },
-      {
-        "name": "Services",
-        "url": "/services/"
-      },
-      {
-        "name": "Products",
-        "url": "/products/"
-      },
-      {
-        "name": "Engineering Services",
-        "url": "/engineering-services/"
-      },
-      {
-        "name": "Contact Us",
-        "url": "/contact-us/"
-      }
-    ]
-  },
-  "outputs": {
-    "home": ["HTML", "RSS"]
-  },
-  "buildDrafts": false,
-  "buildFuture": false,
-  "buildExpired": false
+    "siteTitle": "VCT HVAC Services - Professional Air Duct Cleaning & HVAC Solutions",
+    "siteDescription": "VCT HVAC Services - Professional Air Duct Cleaning, Kitchen Exhaust Cleaning, and HVAC solutions in Dubai and Hyderabad",
+    "companyName": "VCT HVAC Services",
+    "keywords": "VCT HVAC Services, HVAC Dubai, HVAC Hyderabad, Air Duct Cleaning, Kitchen Exhaust Cleaning, HVAC Maintenance, Robotic Duct Cleaning",
+
+    "gaMeasurementId": "G-MY7VLG8RE7",
+    "googleAdsConversionId": "",
+    "facebookPixelId": "",
+    "linkedinPartnerId": "",
+    "twitterPixelId": "",
+    "clarityProjectId": ""
+  }
 }
