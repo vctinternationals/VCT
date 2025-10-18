@@ -1,12 +1,51 @@
 {
-"baseURL": "https://example.org/",
-"languageCode": "en-us",
-"title" : "My New Hugo Site",
-"markup": {
-  "goldmark": {
-    "renderer": {
-      "unsafe": true
-   }
-  }
-}
+  "baseURL": "https://vctinternationals.com/",
+  "languageCode": "en-us",
+  "title": "VCT Internationals - Technical Services",
+  "markup": {
+    "goldmark": {
+      "renderer": {
+        "unsafe": true
+      }
+    }
+  },
+  "params": {
+    "description": "VCT Internationals - Professional technical services in India and Dubai",
+    "author": "VCT Internationals",
+    "workingHours": "10:00 am - 07:00 pm"
+  },
+  "menu": {
+    "main": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "About Us",
+        "url": "/about-us/"
+      },
+      {
+        "name": "Services",
+        "url": "/services/"
+      },
+      {
+        "name": "Products",
+        "url": "/products/"
+      },
+      {
+        "name": "Engineering Services",
+        "url": "/engineering-services/"
+      },
+      {
+        "name": "Contact Us",
+        "url": "/contact-us/"
+      }
+    ]
+  },
+  "outputs": {
+    "home": ["HTML", "RSS"]
+  },
+  "buildDrafts": false,
+  "buildFuture": false,
+  "buildExpired": false
 }
