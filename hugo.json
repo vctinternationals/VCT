@@ -10,6 +10,7 @@
     }
   },
   "params": {
+    "theme": "light",
     "siteTitle": "VCT Technical Services - Professional Air Duct Cleaning & HVAC Solutions",
     "siteDescription": "VCT Technical Services - Professional Air Duct Cleaning, Kitchen Exhaust Cleaning, and HVAC solutions in Dubai and Hyderabad",
     "companyName": "VCT Technical Services",
@@ -21,6 +22,10 @@
     "facebookPixelId": "",
     "linkedinPartnerId": "",
     "twitterPixelId": "",
-    "clarityProjectId": ""
+    "clarityProjectId": "",
+    "recaptchaEnabled": true,
+    "recaptchaSiteKey": "6LfMyO8rAAAAABiUt26CBqxcLucIGHPJ-izEud8N",
+    "staticFormsApiKeyIndia": "sf_864b2j07f4am0j4b4n88hm47",
+    "staticFormsApiKeyDubai": "sf_64m0gihg34m43j3lfdahnhcm"
   }
 }

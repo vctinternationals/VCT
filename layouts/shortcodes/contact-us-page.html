@@ -16,8 +16,10 @@
     <div class="container">
         <form action="https://api.staticforms.xyz/submit" method="POST" class="card shadow-sm mx-auto"
             style="max-width:800px;" id="contactForm" novalidate>
-            <input hidden name="apiKey" value="sf_c4innj67fclc763hbe9mg86n" >
-            <input type="hidden" name="redirectTo" value="https://vctinternationals.com">
+            <input hidden name="apiKey" id="apiKey" value="" >
+            <input hidden name="company-contact-india" id="company-contact-india" value="{{$common.indiaCompanyDetails.contactNumber}}" >
+            <input hidden name="company-contact-dubai" id="company-contact-dubai" value="{{$common.dubaiCompanyDetails.contactNumber}}" >
+            <input type="hidden" name="redirectTo" value="https://vctinternationals.com/thank-you/">
             <!-- hidden replyTo will be filled from email input -->
             <input type="hidden" name="replyTo" id="replyTo" value="">
             <div class="card-body">
@@ -60,6 +62,11 @@
                         <div class="invalid-feedback">Please enter a message.</div>
                     </div>
 
+                    <div class="col-12">
+                        <div class="g-recaptcha" data-sitekey="{{ .Site.Params.recaptchaSiteKey }}"></div>
+                        <div class="invalid-feedback d-block" id="recaptchaError" style="display:none;">Please verify you are not a robot.</div>
+                    </div>
+
                     <div class="col-12 d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">Send</button>
                     </div>
@@ -68,99 +75,7 @@
         </form>
     </div>
 </div>
-    <!-- <div class="container">
-        <address class="row g-5">
-            <h3 class="card-title">India Office Address</h3>
-            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
-                <div class="card shadow h-100 text-center">
-                    <div class="card-body contact-page-details">
-                        <h3><i class="fa fa-map-marker-alt me-3"></i></h3>
-                        <p class="mb-4">{{$common.indiaCompanyDetails.address}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
-                <div class="card shadow h-100 text-center">
-                    <div class="card-body contact-page-details">
-                        <h3><i class="fa fa-envelope me-3"></i></h3>
-                        <h3 class="card-title">Email</h3>
-                        <a href='mailto:{{$common.indiaCompanyDetails.email}}'
-                            class="mb-4">{{$common.indiaCompanyDetails.email}}</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
-                <div class="card shadow h-100 text-center">
-                    <div class="card-body contact-page-details">
-                        <h3><i class="fa fa-phone-alt me-3"></i></h3>
-                        <h3 class="card-title">Phone Number</h3>
-                        <a href='tel:{{$common.indiaCompanyDetails.contactNumber}}'
-                            class="mb-1">{{$common.indiaCompanyDetails.contactNumber}}</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
-                <div class="card shadow h-100 text-center">
-                    <div class="card-body contact-page-details">
-                        <h3>
-                            <i class="fa-brands fa-whatsapp fa-lg me-3" style="color: #1b9333;"></i>
-                        </h3>
-                        <h3 class="card-title">whatsapp</h3>
-                        <a target="_blank"
-                            href="https://api.whatsapp.com/send?phone={{$common.indiaCompanyDetails.whatsappNumberDetails.number}}"
-                            class="mb-1">{{$common.indiaCompanyDetails.whatsappNumberDetails.display}}</a>
-                    </div>
-                </div>
-            </div>
-        </address>
-    </div>
-    <hr />
-    <div class="container py-5">
-        <address class="row g-5">
-            <h3 class="card-title">Dubai Office Address</h3>
-            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
-                <div class="card shadow h-100 text-center">
-                    <div class="card-body contact-page-details">
-                        <h3><i class="fa fa-map-marker-alt me-3"></i></h3>
-                        <p class="mb-4">{{$common.dubaiCompanyDetails.address}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
-                <div class="card shadow h-100 text-center">
-                    <div class="card-body contact-page-details">
-                        <h3><i class="fa fa-envelope me-3"></i></h3>
-                        <h3 class="card-title">Email</h3>
-                        <a href='mailto:{{$common.dubaiCompanyDetails.email}}'
-                            class="mb-4">{{$common.dubaiCompanyDetails.email}}</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
-                <div class="card shadow h-100 text-center">
-                    <div class="card-body contact-page-details">
-                        <h3><i class="fa fa-phone-alt me-3"></i></h3>
-                        <h3 class="card-title">Phone Number</h3>
-                        <a href='tel:{{$common.dubaiCompanyDetails.contactNumber}}'
-                            class="mb-1">{{$common.dubaiCompanyDetails.contactNumber}}</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeIn mx-auto" data-wow-delay="0.1s">
-                <div class="card shadow h-100 text-center">
-                    <div class="card-body contact-page-details">
-                        <h3>
-                            <i class="fa-brands fa-whatsapp fa-lg me-3" style="color: #1b9333;"></i>
-                        </h3>
-                        <h3 class="card-title">whatsapp</h3>
-                        <a target="_blank"
-                            href="https://api.whatsapp.com/send?phone={{$common.dubaiCompanyDetails.whatsappNumberDetails.number}}"
-                            class="mb-1">{{$common.dubaiCompanyDetails.whatsappNumberDetails.display}}</a>
-                    </div>
-                </div>
-            </div>
-        </address>
-    </div> -->
+    
 </div>
 <!-- Contact End -->
  <script>
@@ -169,6 +84,8 @@
     var form = document.getElementById('contactForm');
     var email = document.getElementById('email');
     var replyTo = document.getElementById('replyTo');
+    var apiKeyInput = document.getElementById('apiKey');
+    var locationSelect = document.getElementById('serviceLocation');
     var ta = document.getElementById('message');
     var counter = document.getElementById('charCount');
 
@@ -178,6 +95,20 @@
       email.addEventListener('input', syncReply);
       syncReply();
     }
+
+    // keep apiKey in sync with serviceLocation
+    var apiKeyIndia = '{{ .Site.Params.staticFormsApiKeyIndia }}';
+    var apiKeyDubai = '{{ .Site.Params.staticFormsApiKeyDubai }}';
+    function resolveApiKey() {
+      if (!locationSelect || !apiKeyInput) return;
+      var loc = (locationSelect.value || '').toLowerCase();
+      if (loc.indexOf('dubai') !== -1) {
+        apiKeyInput.value = apiKeyDubai;
+      } else if (loc.indexOf('india') !== -1 || loc.indexOf('hyderabad') !== -1) {
+        apiKeyInput.value = apiKeyIndia;
+      }
+    }
+    // Do not set apiKey until submit; avoid syncing on change
 
     if (ta && counter) {
       function update(){ counter.textContent = ta.value.length; }
@@ -189,6 +120,20 @@
     form.addEventListener('submit', function (event) {
       // ensure replyTo filled before validation
       if (email && replyTo) replyTo.value = email.value || '';
+      // ensure apiKey matches selected location
+      resolveApiKey();
+      // reCAPTCHA v2 checkbox validation
+      var recaptchaError = document.getElementById('recaptchaError');
+      var token = (window.grecaptcha && window.grecaptcha.getResponse) ? window.grecaptcha.getResponse() : '';
+      if (!token) {
+        if (recaptchaError) recaptchaError.style.display = 'block';
+        event.preventDefault();
+        event.stopPropagation();
+        form.classList.add('was-validated');
+        return;
+      } else {
+        if (recaptchaError) recaptchaError.style.display = 'none';
+      }
       if (!form.checkValidity()) {
         event.preventDefault();
         event.stopPropagation();

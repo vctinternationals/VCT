@@ -63,7 +63,12 @@
   <link href="/lib/animate/animate.min.css" rel="stylesheet">
   <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-  {{ partial "libsass" "scss/styles.scss" }}
+  {{ $theme := default "light" .Site.Params.theme }}
+  {{ if eq $theme "dark" }}
+    {{ partial "libsass" "scss/theme-dark.scss" }}
+  {{ else }}
+    {{ partial "libsass" "scss/theme-light.scss" }}
+  {{ end }}
   {{ partial "libsass" "scss/main.scss" }}
 
   <!-- JavaScript Libraries -->
@@ -77,6 +82,10 @@
 
   <!-- Template Javascript -->
   <script src="/js/main.js"></script>
+
+  {{ if and .Site.Params.recaptchaEnabled (eq .RelPermalink "/contact-us/") }}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  {{ end }}
 
 </head>
 
