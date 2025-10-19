@@ -1,13 +1,7 @@
 @import "_variables.scss";
 
 /********** Template CSS **********/
-:root {
-  --primary: #FF800F;
-  --primary-lite: #ff7f0f85;
-  --secondary: #001064;
-  --light: #F6F7F8;
-  --dark: #010A35;
-}
+// CSS variables now come from :root in _variables.scss
 
 .back-to-top {
   position: fixed;
@@ -39,9 +33,7 @@
 .btn.btn-primary,
 .btn.btn-outline-primary:hover,
 .btn.btn-secondary,
-.btn.btn-outline-secondary:hover {
-  color: #FFFFFF;
-}
+.btn.btn-outline-secondary:hover { color: #FFFFFF; }
 
 .btn.btn-primary:hover {
   background: var(--secondary);
@@ -118,23 +110,13 @@
   line-height: 1;
 }
 
-.brand-name {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #2c3e50;
-  letter-spacing: -0.5px;
-}
+.brand-name { font-size: 1.5rem; font-weight: 800; color: var(--text-strong); letter-spacing: -0.5px; }
 
-.brand-tagline {
-  font-size: 0.75rem;
-  color: #7f8c8d;
-  font-weight: 500;
-  margin-top: -2px;
-}
+.brand-tagline { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; margin-top: -2px; }
 
 /* Navigation Links */
 .navbar-nav .nav-link {
-  color: #2c3e50 !important;
+  color: var(--text-strong) !important;
   font-weight: 500;
   padding: 0.5rem 1rem !important;
   transition: all 0.3s ease;
@@ -171,15 +153,9 @@
   margin-top: 0.5rem;
 }
 
-.dropdown-item {
-  padding: 0.75rem 1.5rem;
-  transition: all 0.3s ease;
-  color: #2c3e50;
-  font-weight: 500;
-}
+.dropdown-item { padding: 0.75rem 1.5rem; transition: all 0.3s ease; color: var(--text-strong); font-weight: 500; }
 
-.dropdown-item:hover {
-  background: #f8f9fa;
+.dropdown-item:hover { background: var(--surface);
   color: var(--primary);
   transform: translateX(5px);
 }
@@ -205,18 +181,7 @@
   gap: 0.5rem;
 }
 
-.social-link {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: #f8f9fa;
-  color: #6c757d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
+.social-link { width: 35px; height: 35px; border-radius: 50%; background: var(--surface); color: #6c757d; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; }
 
 .social-link:hover {
   background: var(--primary);
@@ -225,14 +190,7 @@
 }
 
 /* CTA Button */
-.btn-primary {
-  background: var(--primary);
-  border: none;
-  border-radius: 25px;
-  padding: 0.5rem 1.25rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
+.btn-primary { background: var(--primary); border: none; border-radius: $border-radius; padding: 0.5rem 1.25rem; font-weight: 600; transition: all 0.3s ease; }
 
 .btn-primary:hover {
   transform: translateY(-2px);
@@ -325,13 +283,7 @@
 }
 
 .carousel-control-prev-icon,
-.carousel-control-next-icon {
-  width: 3rem;
-  height: 3rem;
-  background-color: var(--dark);
-  border: 12px solid var(--dark);
-  border-radius: 3rem;
-}
+.carousel-control-next-icon { width: 3rem; height: 3rem; background-color: var(--dark); border: 12px solid var(--dark); border-radius: 3rem; }
 
 .img-icon {
   img {
@@ -361,9 +313,7 @@
 }
 
 .page-header .breadcrumb-item a,
-.page-header .breadcrumb-item+.breadcrumb-item::before {
-  color: var(--light);
-}
+.page-header .breadcrumb-item+.breadcrumb-item::before { color: var(--light); }
 
 .page-header .breadcrumb-item a:hover,
 .page-header .breadcrumb-item.active {
@@ -452,9 +402,7 @@
   background: rgba(1, 10, 53, .8);
 }
 
-.container.quote .quote-form::after {
-  background: rgba(255, 255, 255, .8);
-}
+.container.quote .quote-form::after { background: rgba(255, 255, 255, .8); }
 
 .container.quote .quote-text .h-100,
 .container.quote .quote-form .h-100 {
@@ -578,19 +526,7 @@
 }
 
 .testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
-  margin: 0 5px;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFFFFF;
-  background: var(--primary);
-  border-radius: 45px;
-  font-size: 22px;
-  transition: .5s;
-}
+.testimonial-carousel .owl-nav .owl-next { margin: 0 5px; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: #FFFFFF; background: var(--primary); border-radius: 45px; font-size: 22px; transition: .5s; }
 
 .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover {
@@ -598,29 +534,11 @@
 }
 
 /*** Footer ***/
-.footer {
-  color: #7F8499;
-}
+.footer { color: var(--text); }
 
-.footer .btn.btn-link {
-  display: block;
-  margin-bottom: 5px;
-  padding: 0;
-  text-align: left;
-  color: #7F8499;
-  font-weight: normal;
-  text-transform: capitalize;
-  transition: .3s;
-}
+.footer .btn.btn-link { display: block; margin-bottom: 5px; padding: 0; text-align: left; color: var(--text); font-weight: normal; text-transform: capitalize; transition: .3s; }
 
-.footer .btn.btn-link::before {
-  position: relative;
-  content: "\f105";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: #7F8499;
-  margin-right: 10px;
-}
+.footer .btn.btn-link::before { position: relative; content: "\f105"; font-family: "Font Awesome 5 Free"; font-weight: 900; color: var(--text); margin-right: 10px; }
 
 .footer .btn.btn-link:hover {
   color: var(--primary);
@@ -628,28 +546,20 @@
   box-shadow: none;
 }
 
-.footer .btn.btn-square {
-  color: #7F8499;
-  border: 1px solid #7F8499;
-}
+.footer .btn.btn-square { color: var(--text); border: 1px solid var(--text); }
 
 .footer .btn.btn-square:hover {
   color: var(--light);
   border-color: var(--primary);
 }
 
-.footer .copyright {
-  padding: 25px 0;
-  border-top: 1px solid rgba(256, 256, 256, .1);
-}
+.footer .copyright { padding: 25px 0; border-top: 1px solid var(--border-color); }
 
 .footer .copyright a {
   color: var(--primary);
 }
 
-.footer .copyright a:hover {
-  color: #FFFFFF;
-}
+.footer .copyright a:hover { color: #FFFFFF; }
 
 .pointer-hover:hover {
   cursor: pointer !important

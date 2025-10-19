@@ -1,33 +1,65 @@
 /******* Customized Bootstrap ********/
 
+// Core palette
 $primary: #FF800F;
 $secondary: #001064;
+$success: #2ecc71;
+$info: #17a2b8;
+$warning: #f1c40f;
+$danger: #e74c3c;
 $light: #F6F7F8;
 $dark: #010A35;
 
-$font-family-base: 'Roboto', sans-serif;
+// Derived scales
+$primary-600: darken($primary, 8%);
+$primary-100: lighten($primary, 40%);
 
+// Typography
+$font-family-base: 'Roboto', sans-serif;
 $headings-font-family: 'Roboto Slab', serif;
 
 $body-color: #7F8499;
-
 $headings-color: $dark;
-
 $headings-font-weight: 600;
-
 $display-font-weight: 800;
-
 $enable-responsive-font-sizes: true;
 
-$border-radius: 0px;
-
-$border-radius-sm: $border-radius;
-
-$border-radius-lg: $border-radius;
+// Radii
+$border-radius: .5rem;
+$border-radius-sm: .375rem;
+$border-radius-lg: .75rem;
 
 $link-decoration: none;
-
 $enable-negative-margins: true;
 
+// Z-index overrides
 $zindex-modal-backdrop:999;
+
+// Bootstrap theme colors map
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+// Expose CSS variables for runtime use while keeping SCSS as source of truth
+:root {
+  --primary: #{$primary};
+  --primary-600: #{$primary-600};
+  --primary-lite: #{rgba($primary, .52)};
+  --secondary: #{$secondary};
+  --light: #{$light};
+  --dark: #{$dark};
+  --text: #{$body-color};
+  --text-strong: #2c3e50;
+  --text-muted: #7f8c8d;
+  --surface: #f8f9fa;
+  --border-color: #e9ecef;
+}
+
 @import "bootstrap/scss/bootstrap";
