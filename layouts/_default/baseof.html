@@ -2,15 +2,14 @@
 <html lang="en">
 
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.gaMeasurementId }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ .Site.Params.gaMeasurementId }}');
-  {{ with .Site.Params.googleAdsConversionId }}gtag('config', '{{ . }}', { 'send_page_view': false });{{ end }}
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ .Site.Params.gtmId }}');</script>
+  
+<!-- End Google Tag Manager -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,38 +81,50 @@
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.gtmId }}"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
   {{$common := site.Data.common}}
   <!-- Topbar Start -->
   <div class="container-fluid bg-dark text-white-50 py-2 px-0 d-none d-lg-block">
     <div class="row gx-0 align-items-center">
-      <address class="col-lg-7 m-0 pl-4 text-start">
-        <div class="h-100 d-inline-flex align-items-center me-4">
+      <address class="col-4  m-0 px-4 text-start">
+        <small class="px-2">India</small>
+        <div class="h-100 d-inline-flex align-items-center me-2">
           <small class="fa fa-phone-alt me-2"></small>
           <small class="me-2">
             <a href="tel:{{$common.indiaCompanyDetails.contactNumber}}"
-              class="mb-1">India {{$common.indiaCompanyDetails.contactNumber}}</a>
-          </small>
-          /
-          <small class="ms-2">
-            <a href="tel:{{$common.dubaiCompanyDetails.contactNumber}}"
-              class="mb-1">Dubai {{$common.dubaiCompanyDetails.contactNumber}}</a>
+              class="mb-1">{{$common.indiaCompanyDetails.contactNumber}}</a>
           </small>
         </div>
-        <div class="h-100 d-inline-flex align-items-center me-4">
+        <div class="h-100 d-inline-flex align-items-center me-2">
           <small class="far fa-envelope-open me-2"></small>
           <small class="me-2">
             <a href="mailto:{{$common.indiaCompanyDetails.email}}"
               class="mb-4">{{$common.indiaCompanyDetails.email}}</a>
           </small>
-          /
-          <small class="ms-2">
-            <a href="mailto:{{$common.indiaCompanyDetails.supportEmail}}"
-              class="mb-4">{{$common.indiaCompanyDetails.supportEmail}}</a>
+        </div>
+      </address>
+      <address class="col-4 m-0 px-2 text-start">
+        <small class="px-2">Dubai</small>
+        <div class="h-100 d-inline-flex align-items-center me-2">
+          <small class="fa fa-phone-alt me-2"></small>
+          <small class="me-2">
+            <a href="tel:{{$common.dubaiCompanyDetails.contactNumber}}"
+              class="mb-1">{{$common.dubaiCompanyDetails.contactNumber}}</a>
+          </small>
+        </div>
+        <div class="h-100 d-inline-flex align-items-center me-2">
+          <small class="far fa-envelope-open me-2"></small>
+          <small class="me-2">
+            <a href="mailto:{{$common.dubaiCompanyDetails.email}}"
+              class="mb-4">{{$common.dubaiCompanyDetails.email}}</a>
           </small>
         </div>
       </address>
-      <div class="col-lg-5 px-4 text-end ">
+      <div class="col-4 px-4 text-end ">
         <small class="far fa-regular fa-clock"></small>
         <a>{{$common.workingHours}}</a>
       </div>
@@ -170,9 +181,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/engineering-services">Engineering</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="/contact-us">Contact</a>
-        </li>
+        </li> -->
       </ul>
 
       <!-- Social Media & CTA Section -->

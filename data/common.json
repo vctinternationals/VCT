@@ -1,24 +1,24 @@
 {
-    "workingHours": "10:00 am - 07:00 pm",
+    "workingHours": "08:00 am - 08:00 pm",
     "indiaCompanyDetails": {
         "contactNumber": "+91 8688912223",
         "whatsappNumberDetails":{
             "number":"918688912223",
             "display":"+91 8688912223"
         },
-        "email": "info@vctinternationals.com",
-        "supportEmail":"support@vctinternationals.com",
+        "email": "Info@ctin.in",
+        "supportEmail":"Info@ctin.in",
         "address": "2-1-49/1, Venkataramana Colony, Nagole, Hyderabad, Nagole, Hyderabad, Hyderabad, Telangana 500068"
     },
     "dubaiCompanyDetails": {
-        "contactNumber": "+971 523490577",
+        "contactNumber": "+971 58 694 4831",
         "whatsappNumberDetails":{
-            "number":"971523490577",
-            "display":"+971 523490577"
+            "number":"971586944831",
+            "display":"+971 58 694 4831"
         },
         "email": "info@vctinternationals.com",
         "supportEmail":"support@vctinternationals.com",
-        "address": "Hamsah A Building, Al Karama, Dubai"
+        "address": "Office no. 202-80, AL ARIF SHIPPING BUILDING, Port Saeed, Dubai, United Arab Emirates"
     },
     "socialMediaHandlers": {
         "facebook": "https://www.facebook.com/profile.php?id=61552644016905",

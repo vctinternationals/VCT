@@ -10,12 +10,13 @@
     }
   },
   "params": {
-    "siteTitle": "VCT HVAC Services - Professional Air Duct Cleaning & HVAC Solutions",
-    "siteDescription": "VCT HVAC Services - Professional Air Duct Cleaning, Kitchen Exhaust Cleaning, and HVAC solutions in Dubai and Hyderabad",
-    "companyName": "VCT HVAC Services",
-    "keywords": "VCT HVAC Services, HVAC Dubai, HVAC Hyderabad, Air Duct Cleaning, Kitchen Exhaust Cleaning, HVAC Maintenance, Robotic Duct Cleaning",
+    "siteTitle": "VCT Technical Services - Professional Air Duct Cleaning & HVAC Solutions",
+    "siteDescription": "VCT Technical Services - Professional Air Duct Cleaning, Kitchen Exhaust Cleaning, and HVAC solutions in Dubai and Hyderabad",
+    "companyName": "VCT Technical Services",
+    "keywords": "VCT Technical Services, HVAC Dubai, HVAC Hyderabad, Air Duct Cleaning, Kitchen Exhaust Cleaning, HVAC Maintenance, Robotic Duct Cleaning",
 
-    "gaMeasurementId": "G-MY7VLG8RE7",
+    "gtmId": "GTM-P2B6VDB9",
+    "gaMeasurementId": "",
     "googleAdsConversionId": "",
     "facebookPixelId": "",
     "linkedinPartnerId": "",
