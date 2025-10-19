@@ -106,30 +106,162 @@ VCT/
 ## ⚙️ Configuration
 
 ### Site Configuration (`hugo.json`)
+
+The main configuration file contains all site settings, parameters, and integrations:
+
+#### Basic Site Settings
 ```json
 {
-  "baseURL": "https://vctinternationals.com/",
+  "baseURL": "https://yourdomain.com/",
   "languageCode": "en-us",
-  "title": "VCT Internationals HVAC Services",
-  "params": {
-    "theme": "light",
-    "siteTitle": "VCT Technical Services - Professional Air Duct Cleaning & HVAC Solutions",
-    "companyName": "VCT Technical Services",
-    "gtmId": "GTM-P2B6VDB9",
-    "recaptchaEnabled": true,
-    "recaptchaSiteKey": "YOUR_RECAPTCHA_SITE_KEY",
-    "staticFormsApiKeyIndia": "YOUR_INDIA_API_KEY",
-    "staticFormsApiKeyDubai": "YOUR_DUBAI_API_KEY"
+  "title": "Your Site Title"
+}
+```
+- **`baseURL`**: **Critical** - Must match your actual domain for proper asset loading and SEO
+- **`languageCode`**: **Important for SEO** - Helps search engines understand content language
+- **`title`**: **Essential for branding** - Used in browser tabs and search results
+
+#### Markup Configuration
+```json
+"markup": {
+  "goldmark": {
+    "renderer": {
+      "unsafe": true
+    }
+  }
+}
+```
+- **`unsafe: true`**: Allows raw HTML in Markdown content for complex layouts
+
+#### Site Parameters (`params`)
+```json
+"params": {
+  "theme": "light",
+  "siteTitle": "Your Company - Professional Services",
+  "siteDescription": "Your company description for SEO",
+  "companyName": "Your Company Name",
+  "keywords": "your, relevant, keywords, for, SEO"
+}
+```
+- **`theme`**: **Important for UX** - Controls light/dark mode (affects user experience)
+- **`siteTitle`**: **Critical for SEO** - Appears in search results and browser tabs
+- **`siteDescription`**: **Essential for SEO** - Meta description for search engines
+- **`companyName`**: **Important for branding** - Used throughout templates for consistency
+- **`keywords`**: **Valuable for SEO** - Helps search engines categorize your content
+
+#### Analytics & Tracking
+```json
+"gtmId": "YOUR_GTM_CONTAINER_ID",
+"gaMeasurementId": "YOUR_GA4_MEASUREMENT_ID",
+"googleAdsConversionId": "YOUR_GOOGLE_ADS_ID",
+"facebookPixelId": "YOUR_FACEBOOK_PIXEL_ID",
+"linkedinPartnerId": "YOUR_LINKEDIN_PARTNER_ID",
+"twitterPixelId": "YOUR_TWITTER_PIXEL_ID",
+"clarityProjectId": "YOUR_CLARITY_PROJECT_ID"
+```
+- **`gtmId`**: **Primary analytics container** - Centralizes all tracking codes
+- **`gaMeasurementId`**: Direct Google Analytics 4 integration - **Important for detailed analytics**
+- **`googleAdsConversionId`**: **Critical for conversion tracking** and ROI measurement
+- **`facebookPixelId`**: **Essential for Facebook/Meta advertising** and retargeting
+- **`linkedinPartnerId`**: **Important for B2B marketing** and LinkedIn advertising
+- **`twitterPixelId`**: **Valuable for Twitter advertising** and audience insights
+- **`clarityProjectId`**: **Useful for user behavior analysis** and UX optimization
+
+#### Contact Form Configuration
+```json
+"recaptchaEnabled": true,
+"recaptchaSiteKey": "YOUR_RECAPTCHA_SITE_KEY",
+"staticFormsApiKeyIndia": "YOUR_INDIA_API_KEY",
+"staticFormsApiKeyDubai": "YOUR_DUBAI_API_KEY"
+```
+- **`recaptchaEnabled`**: Boolean flag to enable/disable reCAPTCHA protection globally
+- **`recaptchaSiteKey`**: Google reCAPTCHA v2 site key - **Critical for spam protection**
+- **`staticFormsApiKeyIndia`**: **Essential** for routing India/Hyderabad submissions to correct office
+- **`staticFormsApiKeyDubai`**: **Essential** for routing Dubai submissions to correct office
+
+#### Configuration Usage in Templates
+```go
+// Access site parameters in templates
+{{ .Site.Params.companyName }}
+{{ .Site.Params.recaptchaSiteKey }}
+{{ .Site.Params.staticFormsApiKeyIndia }}
+
+// Conditional reCAPTCHA loading
+{{ if and .Site.Params.recaptchaEnabled (eq .RelPermalink "/contact-us/") }}
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{{ end }}
+```
+
+### Company Data (`data/common.json`)
+
+Contains structured data for both office locations and social media. This file is **critical** for maintaining consistent contact information across the site.
+
+#### Structure Overview
+```json
+{
+  "workingHours": "Business hours display",
+  "indiaCompanyDetails": {
+    "contactNumber": "India office phone",
+    "whatsappNumberDetails": {
+      "number": "WhatsApp number for links",
+      "display": "Formatted display number"
+    },
+    "email": "India office email",
+    "supportEmail": "India support email",
+    "address": "Complete India office address"
+  },
+  "dubaiCompanyDetails": {
+    "contactNumber": "Dubai office phone",
+    "whatsappNumberDetails": {
+      "number": "WhatsApp number for links",
+      "display": "Formatted display number"
+    },
+    "email": "Dubai office email",
+    "supportEmail": "Dubai support email",
+    "address": "Complete Dubai office address"
+  },
+  "socialMediaHandlers": {
+    "facebook": "Facebook page URL",
+    "youtube": "YouTube channel URL",
+    "linkedin": "LinkedIn profile URL",
+    "instagram": "Instagram profile URL"
   }
 }
 ```
 
-### Company Data (`data/common.json`)
-Contains contact information for both offices:
-- India office details (Hyderabad)
-- Dubai office details
-- Social media links
-- Working hours
+#### Importance of Each Section
+- **`workingHours`**: **Important for customer expectations** - Shows when customers can reach you
+- **Office Details**: **Critical for lead generation** - Contact info must be accurate and up-to-date
+- **WhatsApp Integration**: **Essential for international business** - Enables direct messaging
+- **Email Addresses**: **Critical for business communication** - Separate support emails for better organization
+- **Addresses**: **Important for local SEO** - Helps with Google My Business and local search
+- **Social Media**: **Valuable for brand building** - Centralizes all social platform links
+
+#### Usage in Templates
+```go
+// Access company data
+{{$common := site.Data.common}}
+
+// India office details
+{{$common.indiaCompanyDetails.contactNumber}}
+{{$common.indiaCompanyDetails.email}}
+{{$common.indiaCompanyDetails.address}}
+
+// Dubai office details
+{{$common.dubaiCompanyDetails.contactNumber}}
+{{$common.dubaiCompanyDetails.email}}
+{{$common.dubaiCompanyDetails.address}}
+
+// Social media links
+{{$common.socialMediaHandlers.facebook}}
+{{$common.socialMediaHandlers.youtube}}
+{{$common.socialMediaHandlers.linkedin}}
+{{$common.socialMediaHandlers.instagram}}
+
+// WhatsApp links
+{{$common.indiaCompanyDetails.whatsappNumberDetails.number}}
+{{$common.dubaiCompanyDetails.whatsappNumberDetails.number}}
+```
 
 ## 🎨 Styling & Assets
 
@@ -182,13 +314,37 @@ static/images/
 ## 🔧 Features
 
 ### Contact Form
-- **reCAPTCHA v2** protection
-- **Location-based API routing**:
-  - India/Hyderabad → India StaticForms API key
-  - Dubai → Dubai StaticForms API key
-- **Form validation** (client-side)
-- **Thank you page** redirect
-- **Character counter** for message field
+
+The contact form (`layouts/shortcodes/contact-us-page.html`) is a sophisticated multi-location form with the following features:
+
+#### Form Fields
+- **Name** (required): Customer's full name
+- **Email** (required): Valid email address with HTML5 validation
+- **Phone** (required): Contact number with tel input type
+- **Service Location** (required): Dropdown with options:
+  - India (Hyderabad)
+  - Dubai
+- **Message** (required): Textarea with 1000 character limit and live counter
+
+#### Security Features
+- **reCAPTCHA v2 Checkbox**: "I'm not a robot" verification
+- **Client-side validation**: Prevents submission without completing reCAPTCHA
+- **Server-side protection**: StaticForms handles spam filtering
+
+#### Location-Based Routing
+The form dynamically selects API keys based on service location:
+- **India/Hyderabad** → Uses `staticFormsApiKeyIndia`
+- **Dubai** → Uses `staticFormsApiKeyDubai`
+- **Dynamic switching**: API key is set only on form submission
+
+#### Form Submission Flow
+1. User fills form and selects service location
+2. Client-side validation checks all required fields
+3. reCAPTCHA verification is validated
+4. API key is set based on location selection
+5. Form submits to StaticForms with appropriate API key
+6. User is redirected to thank-you page
+7. StaticForms sends email notification to appropriate office
 
 ### Responsive Design
 - **Mobile-first** approach
