@@ -1,0 +1,14 @@
+// Light theme overrides (explicit for clarity)
+$primary: #FF800F;
+$secondary: #001064;
+$light: #F6F7F8;
+$dark: #010A35;
+$body-color: #7F8499;
+$surface: #f8f9fa;
+$border-color: #e9ecef;
+$text-strong: #2c3e50;
+$text-muted: #7f8c8d;
+
+// Import site styles (will pull _variables.scss which respects !default)
+@import "styles";
+

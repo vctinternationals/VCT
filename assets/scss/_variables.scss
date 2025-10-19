@@ -1,33 +1,71 @@
 /******* Customized Bootstrap ********/
 
-$primary: #FF800F;
-$secondary: #001064;
-$light: #F6F7F8;
-$dark: #010A35;
+// Core palette
+$primary: #FF800F !default;
+$secondary: #001064 !default;
+$success: #2ecc71 !default;
+$info: #17a2b8 !default;
+$warning: #f1c40f !default;
+$danger: #e74c3c !default;
+$light: #F6F7F8 !default;
+$dark: #010A35 !default;
 
-$font-family-base: 'Roboto', sans-serif;
+// Derived scales
+$primary-600: darken($primary, 8%) !default;
+$primary-100: lighten($primary, 40%) !default;
 
-$headings-font-family: 'Roboto Slab', serif;
+// Surfaces and text
+$surface: #f8f9fa !default;
+$border-color: #e9ecef !default;
+$text-strong: #2c3e50 !default;
+$text-muted: #7f8c8d !default;
 
-$body-color: #7F8499;
+// Typography
+$font-family-base: 'Roboto', sans-serif !default;
+$headings-font-family: 'Roboto Slab', serif !default;
 
-$headings-color: $dark;
+$body-color: #7F8499 !default;
+$headings-color: $dark !default;
+$headings-font-weight: 600 !default;
+$display-font-weight: 800 !default;
+$enable-responsive-font-sizes: true !default;
 
-$headings-font-weight: 600;
+// Radii
+$border-radius: .5rem !default;
+$border-radius-sm: .375rem !default;
+$border-radius-lg: .75rem !default;
 
-$display-font-weight: 800;
+$link-decoration: none !default;
+$enable-negative-margins: true !default;
 
-$enable-responsive-font-sizes: true;
+// Z-index overrides
+$zindex-modal-backdrop:999 !default;
 
-$border-radius: 0px;
+// Bootstrap theme colors map
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
 
-$border-radius-sm: $border-radius;
+// Expose CSS variables for runtime use while keeping SCSS as source of truth
+:root {
+  --primary: #{$primary};
+  --primary-600: #{$primary-600};
+  --primary-lite: #{rgba($primary, .52)};
+  --secondary: #{$secondary};
+  --light: #{$light};
+  --dark: #{$dark};
+  --text: #{$body-color};
+  --text-strong: #{$text-strong};
+  --text-muted: #{$text-muted};
+  --surface: #{$surface};
+  --border-color: #{$border-color};
+}
 
-$border-radius-lg: $border-radius;
-
-$link-decoration: none;
-
-$enable-negative-margins: true;
-
-$zindex-modal-backdrop:999;
 @import "bootstrap/scss/bootstrap";

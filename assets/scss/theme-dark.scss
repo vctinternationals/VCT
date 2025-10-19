@@ -1,0 +1,14 @@
+// Dark theme overrides
+$primary: #FF800F; // keep brand accent
+$secondary: #6ea8fe; // lighter secondary for dark bg contrast
+$light: #0f1736; // used as "light" surfaces in dark context
+$dark: #0b122b; // page background
+$body-color: #c9cfdf; // base text color on dark
+$surface: #121a3a; // cards, dropdowns
+$border-color: #22305e; // subtle borders on dark
+$text-strong: #eef2ff;
+$text-muted: #99a3ba;
+
+// Import site styles (will pull _variables.scss which respects !default)
+@import "styles";
+
