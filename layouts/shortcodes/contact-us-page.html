@@ -2,83 +2,97 @@
 
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container text-center py-5">
-        <h1 class="display-4 text-white animated slideInDown mb-4">Contact Us</h1>
-        <p class="mb-1">If You Have Any Query, Please Contact Us</p>
-        <p>We'd love to talk about how we can help you.</p>
-    </div>
+  <div class="container text-center py-5">
+    <h1 class="display-4 text-white animated slideInDown mb-4">Contact Us</h1>
+    <p class="mb-1">We’d love to hear from you! Whether you have questions, feedback, or need assistance, our team is
+      here to help. Please fill out the form below or reach us through the provided contact details, and we’ll get back
+      to you as soon as possible. Your queries and suggestions are important to us, and we’re committed to providing
+      timely and helpful responses.</p>
+  </div>
 </div>
 <!-- Page Header End -->
 
 
 <!-- Contact Start -->
 <div class="container-xxl py-5">
-    <div class="container">
-        <form action="https://api.staticforms.xyz/submit" method="POST" class="card shadow-sm mx-auto"
-            style="max-width:800px;" id="contactForm" novalidate>
-            <input hidden name="apiKey" id="apiKey" value="" >
-            <input hidden name="company-contact-india" id="company-contact-india" value="{{$common.indiaCompanyDetails.contactNumber}}" >
-            <input hidden name="company-contact-dubai" id="company-contact-dubai" value="{{$common.dubaiCompanyDetails.contactNumber}}" >
-            <input type="hidden" name="redirectTo" value="https://vctinternationals.com/thank-you/">
-            <!-- hidden replyTo will be filled from email input -->
-            <input type="hidden" name="replyTo" id="replyTo" value="">
-            <div class="card-body">
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <label for="name" class="form-label">Name</label>
-                        <input id="name" name="name" type="text" class="form-control" placeholder="Your name" required>
-                        <div class="invalid-feedback">Please enter your name.</div>
-                    </div>
+  <div class="container">
+    <form action="https://api.staticforms.xyz/submit" method="POST" class="card shadow-sm mx-auto"
+      style="max-width:800px;" id="contactForm" novalidate>
+      <div class="card-header bg-white border-0 text-center py-4">
+        <h3 class="fw-bold text-primary mb-2">Get In Touch</h3>
+        <p class="text-muted">Fill out the form below and we'll get back to you shortly</p>
+      </div>
+      <input hidden name="apiKey" id="apiKey" value="">
+      <input hidden name="company-contact-india" id="company-contact-india"
+        value="{{$common.indiaCompanyDetails.contactNumber}}">
+      <input hidden name="company-contact-dubai" id="company-contact-dubai"
+        value="{{$common.dubaiCompanyDetails.contactNumber}}">
+      <input type="hidden" name="redirectTo" value="https://vctinternationals.com/thank-you/">
+      <!-- hidden replyTo will be filled from email input -->
+      <input type="hidden" name="replyTo" id="replyTo" value="">
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label">Name</label>
+            <input id="name" name="name" type="text" class="form-control" placeholder="Your name" required>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
 
-                    <div class="col-md-6">
-                        <label for="email" class="form-label">Email</label>
-                        <input id="email" name="email" type="email" class="form-control" placeholder="you@domain.com"
-                            required>
-                        <div class="invalid-feedback">Please enter a valid email.</div>
-                    </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" name="email" type="email" class="form-control" placeholder="you@domain.com" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
 
-                    <div class="col-md-6">
-                        <label for="phone" class="form-label">Phone</label>
-                        <input id="phone" name="phone" type="tel" class="form-control" placeholder="+91 99999 99999"
-                            required>
-                        <div class="invalid-feedback">Please enter your phone number.</div>
-                    </div>
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Phone</label>
+            <input id="phone" name="phone" type="tel" class="form-control" placeholder="+91 99999 99999" required>
+            <div class="invalid-feedback">Please enter your phone number.</div>
+          </div>
 
-                    <div class="col-md-6">
-                        <label for="serviceLocation" class="form-label">Service location</label>
-                        <select id="serviceLocation" name="serviceLocation" class="form-select" required>
-                            <option value="" selected disabled>Choose location</option>
-                            <option value="India (Hyderabad)">India (Hyderabad)</option>
-                            <option value="Dubai">Dubai</option>
-                        </select>
-                        <div class="invalid-feedback">Please select a service location.</div>
-                    </div>
+          <div class="col-md-6">
+            <label for="serviceLocation" class="form-label">Service location</label>
+            <select id="serviceLocation" name="serviceLocation" class="form-select" required>
+              <option value="" selected disabled>Choose location</option>
+              <option value="India (Hyderabad)">India (Hyderabad)</option>
+              <option value="Dubai">Dubai</option>
+            </select>
+            <div class="invalid-feedback">Please select a service location.</div>
+          </div>
+          <address class="col-12">
+            <label for="address" class="form-label">Address</label>
+            <textarea id="address" name="address" rows="5" class="form-control" placeholder="Your address"
+              maxlength="250"></textarea>
+            <div class="form-text text-end"><small><span id="addressCharCount">0</span>/250</small></div>
+            <div class="invalid-feedback">Please enter your address.</div>
+          </address>
 
-                    <div class="col-12">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" rows="5" class="form-control" placeholder="Your message"
-                            required maxlength="1000"></textarea>
-                        <div class="form-text text-end"><small><span id="charCount">0</span>/1000</small></div>
-                        <div class="invalid-feedback">Please enter a message.</div>
-                    </div>
+          <div class="col-12">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" rows="5" class="form-control" placeholder="Your message" required
+              maxlength="1000"></textarea>
+            <div class="form-text text-end"><small><span id="messageCharCount">0</span>/1000</small></div>
+            <div class="invalid-feedback">Please enter a message.</div>
+          </div>
 
-                    <div class="col-12">
-                        <div class="g-recaptcha" data-sitekey="{{ .Site.Params.recaptchaSiteKey }}"></div>
-                        <div class="invalid-feedback d-block" id="recaptchaError" style="display:none;">Please verify you are not a robot.</div>
-                    </div>
+          <div class="col-12">
+            <div class="g-recaptcha" data-sitekey="{{ .Site.Params.recaptchaSiteKey }}"></div>
+            <div class="invalid-feedback d-block" id="recaptchaError" style="display:none;">Please verify you are not a
+              robot.</div>
+          </div>
 
-                    <div class="col-12 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary">Send</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+          <div class="col-12 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
-    
+
 </div>
 <!-- Contact End -->
- <script>
+<script>
   (function () {
     'use strict';
     var form = document.getElementById('contactForm');
@@ -86,12 +100,15 @@
     var replyTo = document.getElementById('replyTo');
     var apiKeyInput = document.getElementById('apiKey');
     var locationSelect = document.getElementById('serviceLocation');
-    var ta = document.getElementById('message');
-    var counter = document.getElementById('charCount');
+    // Add character count logic for address and message
+    var address = document.getElementById('address');
+    var addressCounter = document.getElementById('addressCharCount');
+    var message = document.getElementById('message');
+    var messageCounter = document.getElementById('messageCharCount');
 
     if (email && replyTo) {
       // keep replyTo in sync with email
-      function syncReply(){ replyTo.value = email.value || ''; }
+      function syncReply() { replyTo.value = email.value || ''; }
       email.addEventListener('input', syncReply);
       syncReply();
     }
@@ -108,13 +125,32 @@
         apiKeyInput.value = apiKeyIndia;
       }
     }
-    // Do not set apiKey until submit; avoid syncing on change
 
-    if (ta && counter) {
-      function update(){ counter.textContent = ta.value.length; }
-      ta.addEventListener('input', update);
-      update();
+    function updateCharCount(textarea, counter, maxLength) {
+      if (textarea && counter) {
+        textarea.addEventListener('input', function() {
+          var length = textarea.value.length;
+          counter.textContent = length;
+          
+          // Visual feedback when approaching limit
+          if (length >= maxLength) {
+            counter.classList.add('text-danger');
+          } else if (length >= maxLength * 0.9) {
+            counter.classList.add('text-warning');
+            counter.classList.remove('text-danger');
+          } else {
+            counter.classList.remove('text-warning', 'text-danger');
+          }
+        });
+      }
     }
+
+    // Initialize character counters
+    updateCharCount(address, addressCounter, 250);  // 200 char limit for address
+    updateCharCount(message, messageCounter, 500);  // 500 char limit for message
+
+
+    // Do not set apiKey until submit; avoid syncing on change
 
     if (!form) return;
     form.addEventListener('submit', function (event) {
