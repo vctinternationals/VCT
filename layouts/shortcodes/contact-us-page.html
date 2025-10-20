@@ -71,14 +71,13 @@
             <label for="message" class="form-label">Message</label>
             <textarea id="message" name="message" rows="5" class="form-control" placeholder="Your message" required
               maxlength="1000"></textarea>
+              <div class="invalid-feedback">Please enter a message.</div>
             <div class="form-text text-end"><small><span id="messageCharCount">0</span>/1000</small></div>
-            <div class="invalid-feedback">Please enter a message.</div>
           </div>
 
           <div class="col-12">
             <div class="g-recaptcha" data-sitekey="{{ .Site.Params.recaptchaSiteKey }}"></div>
-            <div class="invalid-feedback d-block" id="recaptchaError" style="display:none;">Please verify you are not a
-              robot.</div>
+            <div class="d-block" id="recaptchaError" style="display:none;">Please verify you are not arobot.</div>
           </div>
 
           <div class="col-12 d-flex justify-content-end">
