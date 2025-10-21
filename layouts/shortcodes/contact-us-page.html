@@ -12,12 +12,13 @@
 </div>
 <!-- Page Header End -->
 
+<div id="jsonData" data-serviceList='{{ $common.servicesList | jsonify }}'></div>
 
 <!-- Contact Start -->
 <div class="container-xxl py-5">
   <div class="container">
-    <form action="https://api.staticforms.xyz/submit" method="POST" class="card shadow-sm mx-auto"
-      style="max-width:800px;" id="contactForm" novalidate>
+    <form id="contactForm" action="https://api.staticforms.xyz/submit" method="POST"
+      class="card shadow-sm mx-auto" style="max-width:800px;" novalidate>
       <div class="card-header bg-white border-0 text-center py-4">
         <h3 class="fw-bold text-primary mb-2">Get In Touch</h3>
         <p class="text-muted">Fill out the form below and we'll get back to you shortly</p>
@@ -32,52 +33,55 @@
       <input type="hidden" name="replyTo" id="replyTo" value="">
       <div class="card-body">
         <div class="row g-3">
-          <div class="col-md-6">
-            <label for="name" class="form-label">Name</label>
+          <div class="col-md-12">
+            <label for="name" class="form-label">Name*</label>
             <input id="name" name="name" type="text" class="form-control" placeholder="Your name" required>
             <div class="invalid-feedback">Please enter your name.</div>
           </div>
 
           <div class="col-md-6">
-            <label for="email" class="form-label">Email</label>
-            <input id="email" name="email" type="email" class="form-control" placeholder="you@domain.com" required>
+            <label for="email" class="form-label">Email*</label>
+            <input id="email" name="email" type="email" class="form-control" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="you@domain.com" required>
             <div class="invalid-feedback">Please enter a valid email.</div>
           </div>
 
           <div class="col-md-6">
-            <label for="phone" class="form-label">Phone</label>
-            <input id="phone" name="phone" type="tel" class="form-control" placeholder="+91 99999 99999" required>
-            <div class="invalid-feedback">Please enter your phone number.</div>
+            <label for="phone" class="form-label">Phone*</label>
+            <input id="phone" name="phone" type="tel" class="form-control" pattern="\+\d{1,3}[\s\-]?\d{4,12}"
+              placeholder="+Country Code - Phone Number" required>
+            <div class="invalid-feedback">Please enter a valid phone number.</div>
           </div>
 
           <div class="col-md-6">
-            <label for="serviceLocation" class="form-label">Service location</label>
+            <label for="serviceLocation" class="form-label">Service location*</label>
             <select id="serviceLocation" name="serviceLocation" class="form-select" required>
               <option value="" selected disabled>Choose location</option>
-              <option value="India (Hyderabad)">India (Hyderabad)</option>
-              <option value="Dubai">Dubai</option>
+              {{ range $key, $value := $common.servicesList }}
+              <option value="{{ $key }}">{{ $key | title }}</option>
+              {{ end }}
             </select>
             <div class="invalid-feedback">Please select a service location.</div>
           </div>
-          <address class="col-12">
-            <label for="address" class="form-label">Address</label>
-            <textarea id="address" name="address" rows="5" class="form-control" placeholder="Your address"
-              maxlength="250"></textarea>
-            <div class="form-text text-end"><small><span id="addressCharCount">0</span>/250</small></div>
-            <div class="invalid-feedback">Please enter your address.</div>
-          </address>
+          <div class="col-md-6">
+            <label for="service" class="form-label">Service*</label>
+            <select id="service" name="service" class="form-select" required disabled>
+              <option value="" selected disabled>Choose Service</option>
+            </select>
+            <div class="invalid-feedback">Please select a service.</div>
+          </div>
 
           <div class="col-12">
-            <label for="message" class="form-label">Message</label>
-            <textarea id="message" name="message" rows="5" class="form-control" placeholder="Your message" required
-              maxlength="1000"></textarea>
-              <div class="invalid-feedback">Please enter a message.</div>
+            <label for="message" class="form-label">Additional Information</label>
+            <textarea id="message" name="message" rows="5" class="form-control"
+              placeholder="Your provided information will help us serve you better." maxlength="1000"></textarea>
+            <div class="invalid-feedback">Please provide additional information.</div>
             <div class="form-text text-end"><small><span id="messageCharCount">0</span>/1000</small></div>
           </div>
 
           <div class="col-12">
+            <div class="d-block">Please verify you are not arobot.</div>
             <div class="g-recaptcha" data-sitekey="{{ .Site.Params.recaptchaSiteKey }}"></div>
-            <div class="d-block" id="recaptchaError" style="display:none;">Please verify you are not arobot.</div>
+            <div id="recaptchaError" style="display:none; color: red;">Please click on checkbox.</div>
           </div>
 
           <div class="col-12 d-flex justify-content-end">
@@ -99,11 +103,54 @@
     var replyTo = document.getElementById('replyTo');
     var apiKeyInput = document.getElementById('apiKey');
     var locationSelect = document.getElementById('serviceLocation');
+    var serviceSelect = document.getElementById('service');
     // Add character count logic for address and message
     var address = document.getElementById('address');
     var addressCounter = document.getElementById('addressCharCount');
     var message = document.getElementById('message');
     var messageCounter = document.getElementById('messageCharCount');
+    const servicesOptions = JSON.parse(document.getElementById('jsonData').dataset.servicelist || '{}');
+
+    function updateServiceOptions() {
+      if (!locationSelect || locationSelect.value === '') return;
+      var loc = (locationSelect.value || '');
+      var options = [];
+      options = servicesOptions[loc] || [];
+      serviceSelect.disabled = false;
+      // Clear existing options
+      serviceSelect.innerHTML = '<option value="" selected disabled>Choose Service</option>';
+      // Populate new options
+      options.forEach(function (service) {
+        var option = document.createElement('option');
+        option.value = service;
+        option.textContent = service;
+        serviceSelect.appendChild(option);
+      });
+    }
+    locationSelect.addEventListener('change', updateServiceOptions);
+
+    function updateCharCount(textarea, counter, maxLength) {
+      if (textarea && counter) {
+        textarea.addEventListener('input', function () {
+          var length = textarea.value.length;
+          counter.textContent = length;
+
+          // Visual feedback when approaching limit
+          if (length >= maxLength) {
+            counter.classList.add('text-danger');
+          } else if (length >= maxLength * 0.9) {
+            counter.classList.add('text-warning');
+            counter.classList.remove('text-danger');
+          } else {
+            counter.classList.remove('text-warning', 'text-danger');
+          }
+        });
+      }
+    }
+
+    // Initialize character counters
+    updateCharCount(address, addressCounter, 250);  // 200 char limit for address
+    updateCharCount(message, messageCounter, 500);  // 500 char limit for message
 
     if (email && replyTo) {
       // keep replyTo in sync with email
@@ -125,55 +172,30 @@
       }
     }
 
-    function updateCharCount(textarea, counter, maxLength) {
-      if (textarea && counter) {
-        textarea.addEventListener('input', function() {
-          var length = textarea.value.length;
-          counter.textContent = length;
-          
-          // Visual feedback when approaching limit
-          if (length >= maxLength) {
-            counter.classList.add('text-danger');
-          } else if (length >= maxLength * 0.9) {
-            counter.classList.add('text-warning');
-            counter.classList.remove('text-danger');
-          } else {
-            counter.classList.remove('text-warning', 'text-danger');
-          }
-        });
-      }
+    form.addEventListener('submit', function (event) {
+      // Now check normal form validation
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+      form.classList.add('was-validated');
+      return;
     }
 
-    // Initialize character counters
-    updateCharCount(address, addressCounter, 250);  // 200 char limit for address
-    updateCharCount(message, messageCounter, 500);  // 500 char limit for message
+    // Sync values
+    if (email) replyTo.value = email.value || '';
+    resolveApiKey();
 
+    // reCAPTCHA Validation First
+    var token = grecaptcha.getResponse ? grecaptcha.getResponse() : "";
+    var recaptchaError = document.getElementById('recaptchaError');
+    if (!token) {
+      event.preventDefault();
+      recaptchaError.style.display = 'block';
+      return;
+    } else {
+      recaptchaError.style.display = 'none';
+    }
 
-    // Do not set apiKey until submit; avoid syncing on change
-
-    if (!form) return;
-    form.addEventListener('submit', function (event) {
-      // ensure replyTo filled before validation
-      if (email && replyTo) replyTo.value = email.value || '';
-      // ensure apiKey matches selected location
-      resolveApiKey();
-      // reCAPTCHA v2 checkbox validation
-      var recaptchaError = document.getElementById('recaptchaError');
-      var token = (window.grecaptcha && window.grecaptcha.getResponse) ? window.grecaptcha.getResponse() : '';
-      if (!token) {
-        if (recaptchaError) recaptchaError.style.display = 'block';
-        event.preventDefault();
-        event.stopPropagation();
-        form.classList.add('was-validated');
-        return;
-      } else {
-        if (recaptchaError) recaptchaError.style.display = 'none';
-      }
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated');
-    }, false);
+  }, false);
   })();
 </script>

@@ -2,22 +2,22 @@
     "workingHours": "08:00 am - 08:00 pm",
     "indiaCompanyDetails": {
         "contactNumber": "+91 8688912223",
-        "whatsappNumberDetails":{
-            "number":"918688912223",
-            "display":"+91 8688912223"
+        "whatsappNumberDetails": {
+            "number": "918688912223",
+            "display": "+91 8688912223"
         },
-        "email": "Info@ctin.in",
-        "supportEmail":"Info@ctin.in",
+        "email": "info@ctin.in",
+        "supportEmail": "Info@ctin.in",
         "address": "2-1-49/1, Venkataramana Colony, Nagole, Hyderabad, Nagole, Hyderabad, Hyderabad, Telangana 500068"
     },
     "dubaiCompanyDetails": {
         "contactNumber": "+971 58 694 4831",
-        "whatsappNumberDetails":{
-            "number":"971586944831",
-            "display":"+971 58 694 4831"
+        "whatsappNumberDetails": {
+            "number": "971586944831",
+            "display": "+971 58 694 4831"
         },
         "email": "info@vctinternationals.com",
-        "supportEmail":"support@vctinternationals.com",
+        "supportEmail": "support@vctinternationals.com",
         "address": "Office no. 202-80, AL ARIF SHIPPING BUILDING, Port Saeed, Dubai, United Arab Emirates"
     },
     "socialMediaHandlers": {
@@ -25,5 +25,33 @@
         "youtube": "https://www.youtube.com/channel/UCRubLr0LlVH10G_XHoTUQ-g",
         "linkedin": "https://www.linkedin.com/in/viranya-kumar-7b17a8179/",
         "instagram": "https://www.instagram.com/vct_technical_services"
+    },
+    "servicesList": {
+        "India": [
+            "Industrial Roof Cleaning Services",
+            "Cobweb Removal Services",
+            "HVAC Duct Cleaning Services",
+            "Kitchen Exhaust Duct Cleaning Services",
+            "AMC for Industrial Shed Cleaning Services",
+            "AMC for Duct Cleaning Services",
+            "Machinery Cleaning Services",
+            "Other's"
+        ],
+        "Dubai": [
+            "A/C Service",
+            "Air Conditioning Installation and Maintenance",
+            "Electrical Repair and Maintenance",
+            "Tile/Marble Replacement",
+            "Painting Works",
+            "Masonry Services",
+            "Handyman Services",
+            "Washing Machine Installation and Repair",
+            "Duct Cleaning Services",
+            "Industrial Cleaning Services",
+            "Plumbing Services",
+            "Carpenter Works",
+            "AMC Services",
+            "Others"
+        ]
     }
 }
