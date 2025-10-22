@@ -9,15 +9,14 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','{{ .Site.Params.gtmId }}');</script>
   
-<!-- End Google Tag Manager -->
-
+  <!-- End Google Tag Manager -->
+  <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Params.siteTitle }}</title>
+  <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerification }}" />  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Params.siteTitle }}</title>
   <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.siteDescription }}{{ end }}">
   <meta name="keywords" content="{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Site.Params.keywords }}{{ end }}">
   <meta name="author" content="{{ .Site.Params.companyName }}">
-  
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ .Permalink }}">
