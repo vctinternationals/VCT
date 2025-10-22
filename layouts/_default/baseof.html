@@ -2,40 +2,48 @@
 <html lang="en">
 
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','{{ .Site.Params.gtmId }}');</script>
-  
-<!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', '{{ .Site.Params.gtmId }}');</script>
+
+  <!-- End Google Tag Manager -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Params.siteTitle }}</title>
-  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.siteDescription }}{{ end }}">
+  <meta name="description"
+    content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.siteDescription }}{{ end }}">
   <meta name="keywords" content="{{ if .Keywords }}{{ .Keywords }}{{ else }}{{ .Site.Params.keywords }}{{ end }}">
   <meta name="author" content="{{ .Site.Params.companyName }}">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:title" content="{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Params.siteTitle }}">
-  <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.siteDescription }}{{ end }}">
-  <meta property="og:image" content="{{ if .Params.image }}{{ .Params.image }}{{ else }}{{ .Site.BaseURL }}/images/vct-full.jpeg{{ end }}">
+  <meta property="og:description"
+    content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.siteDescription }}{{ end }}">
+  <meta property="og:image"
+    content="{{ if .Params.image }}{{ .Params.image }}{{ else }}{{ .Site.BaseURL }}/images/vct-full.jpeg{{ end }}">
   <meta property="og:site_name" content="{{ .Site.Params.companyName }}">
-  
+
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="{{ .Permalink }}">
   <meta property="twitter:title" content="{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Params.siteTitle }}">
-  <meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.siteDescription }}{{ end }}">
-  <meta property="twitter:image" content="{{ if .Params.image }}{{ .Params.image }}{{ else }}{{ .Site.BaseURL }}/images/vct-full.jpeg{{ end }}">
-  
+  <meta property="twitter:description"
+    content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.siteDescription }}{{ end }}">
+  <meta property="twitter:image"
+    content="{{ if .Params.image }}{{ .Params.image }}{{ else }}{{ .Site.BaseURL }}/images/vct-full.jpeg{{ end }}">
+
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ .Permalink }}">
-  
+
   <!-- Favicon and Icons -->
   <link href="/images/icon/favicon.ico" rel="icon">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/icon/favicon.ico">
@@ -65,15 +73,16 @@
 
   {{ $theme := default "light" .Site.Params.theme }}
   {{ if eq $theme "dark" }}
-    {{ partial "libsass" "scss/theme-dark.scss" }}
+  {{ partial "libsass" "scss/theme-dark.scss" }}
   {{ else }}
-    {{ partial "libsass" "scss/theme-light.scss" }}
+  {{ partial "libsass" "scss/theme-light.scss" }}
   {{ end }}
   {{ partial "libsass" "scss/main.scss" }}
 
   <!-- JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  <script src="/lib/wow/wow.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/lib/wow/wow.min.js"></script>
   <script src="/lib/easing/easing.min.js"></script>
   <script src="/lib/waypoints/waypoints.min.js"></script>
   <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
@@ -84,111 +93,108 @@
   <script src="/js/main.js"></script>
 
   {{ if and .Site.Params.recaptchaEnabled (eq .RelPermalink "/contact-us/") }}
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   {{ end }}
 
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.gtmId }}"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.gtmId }}" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   {{$common := site.Data.common}}
   <!-- Topbar Start -->
-  <div class="container-fluid bg-dark text-white py-2 px-4 shadow-sm d-none d-lg-flex align-items-center justify-content-between">
-  
-  <!-- India Office -->
-  <div class="d-flex align-items-center">
-    <strong class="text-decoration-none text-white me-2">India</strong>
-    <div class="d-flex align-items-center me-3">
-      <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-1"></span>
-      <a href="tel:{{$common.indiaCompanyDetails.contactNumber}}" class="text-white text-decoration-none">
-        {{$common.indiaCompanyDetails.contactNumber}}
-      </a>
-    </div>
+  <div
+    class="container-fluid bg-dark text-white py-2 px-4 shadow-sm d-none d-lg-flex align-items-center justify-content-between">
+    <!-- Dubai Office -->
     <div class="d-flex align-items-center">
-      <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
-      <a href="mailto:{{$common.indiaCompanyDetails.email}}" class="text-white text-decoration-none">
-        {{$common.indiaCompanyDetails.email}}
-      </a>
+      <strong class="text-decoration-none text-white me-2">Dubai</strong>
+      <div class="d-flex align-items-center me-3">
+        <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-1"></span>
+        <a href="tel:{{$common.dubaiCompanyDetails.contactNumber}}" class="text-white text-decoration-none">
+          {{$common.dubaiCompanyDetails.contactNumber}}
+        </a>
+      </div>
+      <div class="d-flex align-items-center">
+        <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
+        <a href="mailto:{{$common.dubaiCompanyDetails.email}}" class="text-white text-decoration-none">
+          {{$common.dubaiCompanyDetails.email}}
+        </a>
+      </div>
     </div>
-  </div>
-
-  <!-- Dubai Office -->
-  <div class="d-flex align-items-center">
-    <strong class="text-decoration-none text-white me-2">Dubai</strong>
-    <div class="d-flex align-items-center me-3">
-      <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-1"></span>
-      <a href="tel:{{$common.dubaiCompanyDetails.contactNumber}}" class="text-white text-decoration-none">
-        {{$common.dubaiCompanyDetails.contactNumber}}
-      </a>
-    </div>
+    <!-- India Office -->
     <div class="d-flex align-items-center">
-      <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
-      <a href="mailto:{{$common.dubaiCompanyDetails.email}}" class="text-white text-decoration-none">
-        {{$common.dubaiCompanyDetails.email}}
-      </a>
+      <strong class="text-decoration-none text-white me-2">India</strong>
+      <div class="d-flex align-items-center me-3">
+        <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-1"></span>
+        <a href="tel:{{$common.indiaCompanyDetails.contactNumber}}" class="text-white text-decoration-none">
+          {{$common.indiaCompanyDetails.contactNumber}}
+        </a>
+      </div>
+      <div class="d-flex align-items-center">
+        <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
+        <a href="mailto:{{$common.indiaCompanyDetails.email}}" class="text-white text-decoration-none">
+          {{$common.indiaCompanyDetails.email}}
+        </a>
+      </div>
     </div>
-  </div>
 
-  <!-- Working Hours -->
-  <div class="d-flex align-items-center">
-    <span class="far fa-clock bg-warning text-dark rounded-circle p-2 me-2"></span>
-    <span>{{$common.workingHours}}</span>
-  </div>
+    <!-- Working Hours -->
+    <div class="d-flex align-items-center">
+      <span class="far fa-clock bg-warning text-dark rounded-circle p-2 me-2"></span>
+      <span>{{$common.workingHours}}</span>
+    </div>
 
-</div>
+  </div>
 
   <!-- Topbar End -->
 
   <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top shadow">
-  <div class="container-fluid px-4 px-lg-5">
-    <!-- Brand/Logo Section -->
-    <a href="/" class="navbar-brand d-flex align-items-center">
-      <div class="brand-container d-flex align-items-center">
-        <img class="brand-logo me-2" src="/images/icon/favicon.ico" alt="{{ .Site.Params.companyName }} Logo">
-        <div class="brand-text">
-          <span class="brand-name">VCT</span>
-          <span class="brand-tagline d-inline">Technical Services L.L.C</span>
+  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top shadow">
+    <div class="container-fluid px-4 px-lg-5">
+      <!-- Brand/Logo Section -->
+      <a href="/" class="navbar-brand d-flex align-items-center">
+        <div class="brand-container d-flex align-items-center">
+          <img class="brand-logo me-2" src="/images/icon/favicon.ico" alt="{{ .Site.Params.companyName }} Logo">
+          <div class="brand-text">
+            <span class="brand-name">VCT</span>
+            <span class="brand-tagline d-inline">Technical Services L.L.C</span>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <!-- Mobile Menu Button -->
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- Mobile Menu Button -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Navigation Menu -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about-us">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/services">Our Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/products">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/engineering-services">Engineering</a>
-        </li>
-        <!-- <li class="nav-item">
+      <!-- Navigation Menu -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about-us">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/services">Our Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/engineering-services">Engineering</a>
+          </li>
+          <!-- <li class="nav-item">
           <a class="nav-link" href="/contact-us">Contact</a>
         </li> -->
-      </ul>
+        </ul>
 
-      <!-- Social Media & CTA Section -->
-      <div class="navbar-actions d-flex align-items-center">
-        <!-- Social Media Icons (Desktop Only) -->
-        <!-- <div class="social-links d-none d-lg-flex me-3">
+        <!-- Social Media & CTA Section -->
+        <div class="navbar-actions d-flex align-items-center">
+          <!-- Social Media Icons (Desktop Only) -->
+          <!-- <div class="social-links d-none d-lg-flex me-3">
           <a href="{{$common.socialMediaHandlers.facebook}}" target="_blank" class="social-link me-2" aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
@@ -202,17 +208,17 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div> -->
-        
-        <!-- CTA Button -->
-        <a href="/contact-us" class="btn btn-primary btn-sm">
-          <i class="fa fa-phone me-1"></i>
-          <span class="d-none d-sm-inline">Get Quote</span>
-        </a>
+
+          <!-- CTA Button -->
+          <a href="/contact-us" class="btn btn-primary btn-sm">
+            <i class="fa fa-phone me-1"></i>
+            <span class="d-none d-sm-inline">Get Quote</span>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
-<!-- Navbar End -->
+  </nav>
+  <!-- Navbar End -->
 
   <!-- Container Start -->
   <div class="container-fluid p-0 mb-5">
@@ -222,101 +228,111 @@
 
   <!-- Footer Start -->
   <div class="container-fluid bg-dark text-white pt-5 wow fadeIn" data-wow-delay="0.1s">
-  <div class="container py-4">
-    <div class="row g-5">
+    <div class="container py-4">
+      <div class="row g-5">
+        <!-- Dubai Office -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="text-light mb-3">Dubai Office</h5>
+          <p class="mb-2"><i class="fa fa-map-marker-alt me-2 text-primary"></i>{{$common.dubaiCompanyDetails.address}}
+          </p>
+          <div class="d-flex align-items-center mb-2">
+            <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-2"></span>
+            <a href="tel:{{ $common.dubaiCompanyDetails.contactNumber }}" class="text-white text-decoration-none">
+              {{$common.dubaiCompanyDetails.contactNumber}}
+            </a>
+          </div>
+          <div class="d-flex align-items-center mb-2">
+            <span class="fa-brands fa-whatsapp bg-success text-white rounded-circle p-2 me-2"></span>
+            <a target="_blank"
+              href="https://api.whatsapp.com/send?phone={{$common.dubaiCompanyDetails.whatsappNumberDetails.number}}"
+              class="text-white text-decoration-none">
+              {{$common.dubaiCompanyDetails.whatsappNumberDetails.display}}
+            </a>
+          </div>
+          <div class="d-flex align-items-center">
+            <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
+            <a href="mailto:{{ $common.dubaiCompanyDetails.email }}" class="text-white text-decoration-none">
+              {{$common.dubaiCompanyDetails.email}}
+            </a>
+          </div>
+        </div>
 
-      <!-- India Office -->
-      <div class="col-lg-4 col-md-6">
-        <h5 class="text-light mb-3">Indian Office</h5>
-        <p class="mb-2"><i class="fa fa-map-marker-alt me-2 text-primary"></i>{{$common.indiaCompanyDetails.address}}</p>
-        <div class="d-flex align-items-center mb-2">
-          <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-2"></span>
-          <a href="tel:{{ $common.indiaCompanyDetails.contactNumber }}" class="text-white text-decoration-none">
-            {{$common.indiaCompanyDetails.contactNumber}}
-          </a>
+        <!-- India Office -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="text-light mb-3">Indian Office</h5>
+          <p class="mb-2"><i class="fa fa-map-marker-alt me-2 text-primary"></i>{{$common.indiaCompanyDetails.address}}
+          </p>
+          <div class="d-flex align-items-center mb-2">
+            <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-2"></span>
+            <a href="tel:{{ $common.indiaCompanyDetails.contactNumber }}" class="text-white text-decoration-none">
+              {{$common.indiaCompanyDetails.contactNumber}}
+            </a>
+          </div>
+          <div class="d-flex align-items-center mb-2">
+            <span class="fa-brands fa-whatsapp bg-success text-white rounded-circle p-2 me-2"></span>
+            <a target="_blank"
+              href="https://api.whatsapp.com/send?phone={{$common.indiaCompanyDetails.whatsappNumberDetails.number}}"
+              class="text-white text-decoration-none">
+              {{$common.indiaCompanyDetails.whatsappNumberDetails.display}}
+            </a>
+          </div>
+          <div class="d-flex align-items-center">
+            <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
+            <a href="mailto:{{ $common.indiaCompanyDetails.email }}" class="text-white text-decoration-none">
+              {{$common.indiaCompanyDetails.email}}
+            </a>
+          </div>
         </div>
-        <div class="d-flex align-items-center mb-2">
-          <span class="fa-brands fa-whatsapp bg-success text-white rounded-circle p-2 me-2"></span>
-          <a target="_blank" href="https://api.whatsapp.com/send?phone={{$common.indiaCompanyDetails.whatsappNumberDetails.number}}" class="text-white text-decoration-none">
-            {{$common.indiaCompanyDetails.whatsappNumberDetails.display}}
-          </a>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <h5 class="text-light mb-3">Quick Links</h5>
+          <div class="d-flex flex-column">
+            <a class="text-white text-decoration-none mb-2" href="/about-us">About Us</a>
+            <a class="text-white text-decoration-none mb-2" href="/contact-us">Contact Us</a>
+            <a class="text-white text-decoration-none" href="/services">Our Services</a>
+          </div>
         </div>
-        <div class="d-flex align-items-center">
-          <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
-          <a href="mailto:{{ $common.indiaCompanyDetails.email }}" class="text-white text-decoration-none">
-            {{$common.indiaCompanyDetails.email}}
-          </a>
+
+        <!-- Social Media -->
+        <div class="col-lg-2 col-md-6">
+          <h5 class="text-light mb-3">Follow Us</h5>
+          <div class="d-flex flex-wrap">
+            <a class="btn btn-square rounded-circle bg-light text-primary me-2 mb-2" target="_blank"
+              href="{{$common.socialMediaHandlers.facebook}}" aria-label="Follow us on Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-square rounded-circle bg-light text-danger me-2 mb-2" target="_blank"
+              href="{{$common.socialMediaHandlers.youtube}}" aria-label="Subscribe to our YouTube channel"><i
+                class="fab fa-youtube"></i></a>
+            <a class="btn btn-square rounded-circle bg-light text-primary me-2 mb-2" target="_blank"
+              href="{{$common.socialMediaHandlers.linkedin}}" aria-label="Connect with us on LinkedIn"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-square rounded-circle bg-light text-danger me-2 mb-2" target="_blank"
+              href="{{$common.socialMediaHandlers.instagram}}" aria-label="Follow us on Instagram"><i
+                class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="container-fluid bg-dark border-top border-secondary py-3 mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center text-white small">
+            &copy; <a href="#" class="text-warning">{{ .Site.Params.companyName }}</a>, All Rights Reserved.
+          </div>
         </div>
       </div>
-
-      <!-- Dubai Office -->
-      <div class="col-lg-4 col-md-6">
-        <h5 class="text-light mb-3">Dubai Office</h5>
-        <p class="mb-2"><i class="fa fa-map-marker-alt me-2 text-primary"></i>{{$common.dubaiCompanyDetails.address}}</p>
-        <div class="d-flex align-items-center mb-2">
-          <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-2"></span>
-          <a href="tel:{{ $common.dubaiCompanyDetails.contactNumber }}" class="text-white text-decoration-none">
-            {{$common.dubaiCompanyDetails.contactNumber}}
-          </a>
-        </div>
-        <div class="d-flex align-items-center mb-2">
-          <span class="fa-brands fa-whatsapp bg-success text-white rounded-circle p-2 me-2"></span>
-          <a target="_blank" href="https://api.whatsapp.com/send?phone={{$common.dubaiCompanyDetails.whatsappNumberDetails.number}}" class="text-white text-decoration-none">
-            {{$common.dubaiCompanyDetails.whatsappNumberDetails.display}}
-          </a>
-        </div>
-        <div class="d-flex align-items-center">
-          <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
-          <a href="mailto:{{ $common.dubaiCompanyDetails.email }}" class="text-white text-decoration-none">
-            {{$common.dubaiCompanyDetails.email}}
-          </a>
-        </div>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="col-lg-2 col-md-6">
-        <h5 class="text-light mb-3">Quick Links</h5>
-        <div class="d-flex flex-column">
-          <a class="text-white text-decoration-none mb-2" href="/about-us">About Us</a>
-          <a class="text-white text-decoration-none mb-2" href="/contact-us">Contact Us</a>
-          <a class="text-white text-decoration-none" href="/services">Our Services</a>
-        </div>
-      </div>
-
-      <!-- Social Media -->
-      <div class="col-lg-2 col-md-6">
-        <h5 class="text-light mb-3">Follow Us</h5>
-        <div class="d-flex flex-wrap">
-          <a class="btn btn-square rounded-circle bg-light text-primary me-2 mb-2" target="_blank"
-            href="{{$common.socialMediaHandlers.facebook}}" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a class="btn btn-square rounded-circle bg-light text-danger me-2 mb-2" target="_blank"
-            href="{{$common.socialMediaHandlers.youtube}}" aria-label="Subscribe to our YouTube channel"><i class="fab fa-youtube"></i></a>
-          <a class="btn btn-square rounded-circle bg-light text-primary me-2 mb-2" target="_blank"
-            href="{{$common.socialMediaHandlers.linkedin}}" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a class="btn btn-square rounded-circle bg-light text-danger me-2 mb-2" target="_blank"
-            href="{{$common.socialMediaHandlers.instagram}}" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-
     </div>
   </div>
-
-  <!-- Copyright -->
-  <div class="container-fluid bg-dark border-top border-secondary py-3 mt-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center text-white small">
-          &copy; <a href="#" class="text-warning">{{ .Site.Params.companyName }}</a>, All Rights Reserved.
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
   <!-- Footer End -->
 
   <!-- Back to Top -->
-  <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top" aria-label="Back to top"><i
+      class="bi bi-arrow-up"></i></a>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -328,4 +344,5 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 </body>
+
 </html>

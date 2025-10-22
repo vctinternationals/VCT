@@ -1,42 +1,67 @@
 [
   {
-    "title": "HVAC Robotic Air Duct Cleaning",
-    "image": "/images/services/duct-cleaning-tech-1.jpg",
-    "description": "Professional robotic air duct cleaning to improve air quality and HVAC efficiency."
+    "title": "Air conditioning Installation & maintenance",
+    "image": "/images/services/acInstallationMaintenance.jpg",
+    "description": "We provide complete air conditioning system Installation, repair and maintenance services"
   },
   {
-    "title": "Annual Maintenance Contract of HVAC",
-    "image": "/images/services/amc.jpg",
-    "description": "Comprehensive AMC services for smooth and reliable HVAC system operation."
+    "title": "Electrical Repair And Maintenance",
+    "image": "/images/services/electrical.jpg",
+    "description": "We offer complete electrical installation, repair & maintenance solutions to keep your systems safe, efficient, and fully operational."
   },
   {
-    "title": "Plumbing Services",
-    "image": "/images/services/plumber.jpg",
-    "description": "Expert plumbing solutions for installation, repair, and maintenance."
+    "title": "Marble & Tiles Replacement",
+    "image": "/images/services/marbleTilesService.jpg",
+    "description": "Your trusted partner for all floor tile types and marble fixing work, done right the first time"
   },
   {
-    "title": "Kitchen Exhaust Cleaning",
-    "image": "/images/services/kitchen-service.jpg",
-    "description": "Professional cleaning of kitchen exhausts to ensure hygiene and safety."
+    "title": "Masonry Services",
+    "image": "/images/services/masonaryService.jpg",
+    "description": "Perfect Walls, Seamless Finishes – Professional Masonry, Putty Work, and Silicone Sealing Services"
   },
   {
-    "title": "Industrial Cobwebs Removal Services",
-    "image": "/images/services/cobwebs-cleaning-services.jpg",
-    "description": "Remove cobwebs from industrial spaces for a clean and safe environment."
+    "title": "Painting Works",
+    "image": "/images/services/paintingService.jpg",
+    "description": "Smooth, Vibrant, Perfect – Painting Solutions for Homes and Businesses"
   },
   {
-    "title": "Machine Cleaning",
+    "title": "Handyman Services",
     "image": "/images/services/industrial-machinery-cleaning.jpg",
-    "description": "Industrial machinery cleaning services to maintain productivity and safety."
+    "description": "Fix, Install, and Perfect – Reliable Handyman Solutions for Every Corner of Your Home"
   },
   {
-    "title": "Electrical Services",
-    "image": "/images/services/service-4.jpg",
-    "description": "Comprehensive electrical services for residential and industrial setups."
+    "title": "Industrial Cleaning Services",
+    "image": "/images/services/industrialCobWebCleaning.jpg", 
+    "description": "From Factories to Warehouses – Professional Industrial Cleaning Services"
   },
   {
-    "title": "Painting Services",
-    "image": "/images/services/painting-services.jpeg",
-    "description": "Professional painting services for interior and exterior spaces."
+    "title": "Carpentry Services",
+    "image": "/images/services/carpentry.jpg",
+    "description": "Doors, Cabinets, Furniture, and More – We Handle It All with Expert Craftsmanship"
+  },
+  {
+    "title": "Washing Machine Installation And Repair",
+    "image": "/images/services/washingMachineService.jpg",
+    "description": "Fast, Reliable, and Affordable – Complete Washing Machine and Dryer  Installation & Repair Solutions"
+  },
+  {
+    "title": "Kitchen exhaust Duct Cleaning Services",
+    "image": "/images/services/painting-services.jpg",
+    "description": "Professional Kitchen Exhaust Duct Cleaning for Residential, Commercial, and Industries"
+  },
+  {
+    "title": "Industrial Roof Cleaning Services",
+    "image": "/images/services/industrialRoofCleaning.jpg",
+    "description": "Clean Roofs, Safe Workspaces – Reliable Industrial Dirt & Debris Cleaning Solutions"
+  },
+  {
+    "title": "Industrial Machinery Cleaning Services",
+    "image": "/images/services/industrialMachineryCleaning.jpg",
+    "description": "Maximize Efficiency, Minimize Downtime – Complete Industrial Machinery Cleaning Solutions"
+  },
+  {
+    "title": "AMC for Industrial shed Cleaning and Hvac Duct Cleaning",
+    "image": "/images/services/painting-services.jpg",
+    "description": "One Contract, Complete Care – Annual Cleaning for Industrial Sheds & HVAC Ducts"
   }
 ]
