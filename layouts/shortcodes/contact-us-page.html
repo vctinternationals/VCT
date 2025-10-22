@@ -1,27 +1,21 @@
 {{$common := site.Data.common}}
 
 <!-- Page Header Start -->
-<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-  <div class="container text-center py-5">
-    <h1 class="display-4 text-white animated slideInDown mb-4">Contact Us</h1>
-    <p class="mb-1">We’d love to hear from you! Whether you have questions, feedback, or need assistance, our team is
-      here to help. Please fill out the form below or reach us through the provided contact details, and we’ll get back
-      to you as soon as possible. Your queries and suggestions are important to us, and we’re committed to providing
-      timely and helpful responses.</p>
-  </div>
+<div class="text-center mx-auto wow fadeInUp pt-5" data-wow-delay="0.1s">
+  <h1 class="display-6 mt-3">Got a Service Need? Let’s Make It Happen!</h1>
 </div>
 <!-- Page Header End -->
 
 <div id="jsonData" data-serviceList='{{ $common.servicesList | jsonify }}'></div>
 
 <!-- Contact Start -->
-<div class="container-xxl py-5">
-  <div class="container">
-    <form id="contactForm" action="https://api.staticforms.xyz/submit" method="POST"
-      class="card shadow-sm mx-auto" style="max-width:800px;" novalidate>
+<div class="container my-5">
+  <div class="row g-3">
+    <div class="col-md-6 card shadow-sm mx-auto">
       <div class="card-header bg-white border-0 text-center py-4">
-        <h3 class="fw-bold text-primary mb-2">Get In Touch</h3>
-        <p class="text-muted">Fill out the form below and we'll get back to you shortly</p>
+        <form id="contactForm" action="https://api.staticforms.xyz/submit" method="POST" novalidate>
+          <h3 class="fw-bold text-primary mb-2">Get In Touch</h3>
+          <p class="text-muted">Fill out the form below and we'll get back to you shortly</p>
       </div>
       <input hidden name="apiKey" id="apiKey" value="">
       <input hidden name="company-contact-india" id="company-contact-india"
@@ -41,14 +35,15 @@
 
           <div class="col-md-6">
             <label for="email" class="form-label">Email*</label>
-            <input id="email" name="email" type="email" class="form-control" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="you@domain.com" required>
+            <input id="email" name="email" type="email" class="form-control"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="you@domain.com" required>
             <div class="invalid-feedback">Please enter a valid email.</div>
           </div>
 
           <div class="col-md-6">
             <label for="phone" class="form-label">Phone*</label>
             <input id="phone" name="phone" type="tel" class="form-control" pattern="\+\d{1,3}[\s\-]?\d{4,12}"
-              placeholder="+Country Code - Phone Number" required>
+              placeholder="+999-999999999" required>
             <div class="invalid-feedback">Please enter a valid phone number.</div>
           </div>
 
@@ -78,21 +73,89 @@
             <div class="form-text text-end"><small><span id="messageCharCount">0</span>/1000</small></div>
           </div>
 
-          <div class="col-12">
+          <div class="col-md-8">
             <div class="d-block">Please verify you are not arobot.</div>
             <div class="g-recaptcha" data-sitekey="{{ .Site.Params.recaptchaSiteKey }}"></div>
             <div id="recaptchaError" style="display:none; color: red;">Please click on checkbox.</div>
           </div>
-
-          <div class="col-12 d-flex justify-content-end">
-            <button type="submit" class="btn btn-primary">Send</button>
+          <div class="col-md-12 mt-5 text-center">
+            <button type="submit" class="btn btn-primary w-50">Send</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-5 p-0">
+      <div class="row g-2">
+        <!-- Office 1 -->
+        <div class="card py-3 px-3 mb-4 shadow-sm">
+          <div class="card-header bg-white">
+            <h5>Dubai Office</h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <p class="col-md-9"><i
+                  class="fa fa-map-marker-alt me-2 text-primary"></i>{{$common.dubaiCompanyDetails.address}}</p>
+              <div class="col-md-3">
+                <a target="_blank" class="d-flex flex-column align-items-end text-decoration-none text-success"
+                  href="https://api.whatsapp.com/send?phone={{$common.dubaiCompanyDetails.whatsappNumberDetails.number}}">
+                  <i class="fa-brands fa-whatsapp fa-3x me-4" style="color: #1b9333;"></i>
+                  <small>WhatsApp Us!</small>
+                </a>
+              </div>
+              <div class="col-md-12 pb-2">
+                <a href="tel:{{ $common.dubaiCompanyDetails.contactNumber }}" class="me-2">
+                  <i class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-2"></i>
+                  {{$common.dubaiCompanyDetails.contactNumber}}
+                </a>
+                <a href="mailto:{{ $common.dubaiCompanyDetails.email }}" class="me-2">
+                  <i class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></i>
+                  {{$common.dubaiCompanyDetails.email}}</a>
+              </div>
+            </div>
+            <div class="ratio ratio-21x9">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d981.9970084553129!2d55.3348152755743!3d25.254210995006876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE1JzE1LjIiTiA1NcKwMjAnMDkuNyJF!5e1!3m2!1sen!2sin!4v1761124223984!5m2!1sen!2sin"
+                width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="card py-3 px-3 mb-4 shadow-sm">
+          <div class="card-header bg-white">
+            <h5>India Office</h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <p class="col-md-9"><i
+                  class="fa fa-map-marker-alt me-2 text-primary"></i>{{$common.indiaCompanyDetails.address}}</p>
+              <div class="col-3 pb-2">
+                <a target="_blank" class="d-flex flex-column align-items-end text-decoration-none text-success"
+                  href="https://api.whatsapp.com/send?phone={{$common.indiaCompanyDetails.whatsappNumberDetails.number}}">
+                  <i class="fa-brands fa-whatsapp fa-3x me-4 me-4" style="color: #1b9333;"></i>
+                  <small>WhatsApp Us!</small>
+                </a>
+              </div>
+              <div class="col-12 pb-2">
+                <a href="tel:{{ $common.indiaCompanyDetails.contactNumber }}" class="me-2">
+                  <i class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-2"></i>
+                  {{$common.indiaCompanyDetails.contactNumber}}
+                </a>
+                <a href="mailto:{{ $common.indiaCompanyDetails.email }}" class="me-2">
+                  <i class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></i>
+                  {{$common.indiaCompanyDetails.email}}</a>
+              </div>
+            </div>
+            <div class="ratio ratio-21x9">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1167.2065203371053!2d78.5621759104934!3d17.383314240383754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb98d5abddefed%3A0x811ad21f131f244f!2sVCT!5e0!3m2!1sen!2sin!4v1761118725937!5m2!1sen!2sin"
+                width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
           </div>
         </div>
       </div>
-    </form>
+    </div>
   </div>
 </div>
-
 </div>
 <!-- Contact End -->
 <script>
@@ -111,6 +174,25 @@
     var messageCounter = document.getElementById('messageCharCount');
     const servicesOptions = JSON.parse(document.getElementById('jsonData').dataset.servicelist || '{}');
 
+    function onLocationChange() {
+      updateServiceOptions();
+      updateContactNumberPlaceholder();
+    }
+
+    function updateContactNumberPlaceholder() {
+      if (!locationSelect) return;
+      var loc = (locationSelect.value || '').toLowerCase();
+
+      var phoneInput = document.getElementById('phone');
+      if (!phoneInput) return;
+
+      if (loc.indexOf('india') !== -1) {
+        phoneInput.placeholder = "+91-9999999999";
+      } else {
+        phoneInput.placeholder = "+999-999999999";
+      }
+    }
+
     function updateServiceOptions() {
       if (!locationSelect || locationSelect.value === '') return;
       var loc = (locationSelect.value || '');
@@ -127,7 +209,7 @@
         serviceSelect.appendChild(option);
       });
     }
-    locationSelect.addEventListener('change', updateServiceOptions);
+    locationSelect.addEventListener('change', onLocationChange);
 
     function updateCharCount(textarea, counter, maxLength) {
       if (textarea && counter) {
@@ -174,28 +256,28 @@
 
     form.addEventListener('submit', function (event) {
       // Now check normal form validation
-    if (!form.checkValidity()) {
-      event.preventDefault();
-      event.stopPropagation();
-      form.classList.add('was-validated');
-      return;
-    }
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        form.classList.add('was-validated');
+        return;
+      }
 
-    // Sync values
-    if (email) replyTo.value = email.value || '';
-    resolveApiKey();
+      // Sync values
+      if (email) replyTo.value = email.value || '';
+      resolveApiKey();
 
-    // reCAPTCHA Validation First
-    var token = grecaptcha.getResponse ? grecaptcha.getResponse() : "";
-    var recaptchaError = document.getElementById('recaptchaError');
-    if (!token) {
-      event.preventDefault();
-      recaptchaError.style.display = 'block';
-      return;
-    } else {
-      recaptchaError.style.display = 'none';
-    }
+      // reCAPTCHA Validation First
+      var token = grecaptcha.getResponse ? grecaptcha.getResponse() : "";
+      var recaptchaError = document.getElementById('recaptchaError');
+      if (!token) {
+        event.preventDefault();
+        recaptchaError.style.display = 'block';
+        return;
+      } else {
+        recaptchaError.style.display = 'none';
+      }
 
-  }, false);
+    }, false);
   })();
 </script>

@@ -1,0 +1,28 @@
+{{ $services := site.Data.services_list }}
+
+<div class="row g-4 justify-content-center">
+  {{ range $index, $service := $services }}
+    {{ $delay := (printf "%.1fs" (mul $index 0.2)) }}
+
+    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ $delay }}">
+      <div class="service-item d-flex flex-column h-100">
+        <!-- Image -->
+        <img class="img-fluid" src="{{ $service.image }}" alt="{{ $service.title }}" />
+
+        <!-- Title + Description -->
+        <div class="bg-light p-3 mt-auto d-flex flex-column">
+          <h4 class="mb-2">{{ $service.title }}</h4>
+          {{ if $service.description }}
+            <p class="mb-3 flex-grow-1">{{ $service.description }}</p>
+          {{ end }}
+
+          <!-- Get Quote Button -->
+          <a href="/contact-us" class="btn btn-primary px-4 py-2">
+            Get Quote
+          </a>
+        </div>
+      </div>
+    </div>
+
+  {{ end }}
+</div>

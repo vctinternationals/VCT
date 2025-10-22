@@ -97,52 +97,54 @@
 
   {{$common := site.Data.common}}
   <!-- Topbar Start -->
-  <div class="container-fluid bg-dark text-white-50 py-2 px-0 d-none d-lg-block">
-    <div class="row gx-0 align-items-center">
-      <address class="col-4  m-0 px-4 text-start">
-        <small class="px-2">India</small>
-        <div class="h-100 d-inline-flex align-items-center me-2">
-          <small class="fa fa-phone-alt me-2"></small>
-          <small class="me-2">
-            <a href="tel:{{$common.indiaCompanyDetails.contactNumber}}"
-              class="mb-1">{{$common.indiaCompanyDetails.contactNumber}}</a>
-          </small>
-        </div>
-        <div class="h-100 d-inline-flex align-items-center me-2">
-          <small class="far fa-envelope-open me-2"></small>
-          <small class="me-2">
-            <a href="mailto:{{$common.indiaCompanyDetails.email}}"
-              class="mb-4">{{$common.indiaCompanyDetails.email}}</a>
-          </small>
-        </div>
-      </address>
-      <address class="col-4 m-0 px-2 text-start">
-        <small class="px-2">Dubai</small>
-        <div class="h-100 d-inline-flex align-items-center me-2">
-          <small class="fa fa-phone-alt me-2"></small>
-          <small class="me-2">
-            <a href="tel:{{$common.dubaiCompanyDetails.contactNumber}}"
-              class="mb-1">{{$common.dubaiCompanyDetails.contactNumber}}</a>
-          </small>
-        </div>
-        <div class="h-100 d-inline-flex align-items-center me-2">
-          <small class="far fa-envelope-open me-2"></small>
-          <small class="me-2">
-            <a href="mailto:{{$common.dubaiCompanyDetails.email}}"
-              class="mb-4">{{$common.dubaiCompanyDetails.email}}</a>
-          </small>
-        </div>
-      </address>
-      <div class="col-4 px-4 text-end ">
-        <small class="far fa-regular fa-clock"></small>
-        <a>{{$common.workingHours}}</a>
-      </div>
+  <div class="container-fluid bg-dark text-white py-2 px-4 shadow-sm d-none d-lg-flex align-items-center justify-content-between">
+  
+  <!-- India Office -->
+  <div class="d-flex align-items-center">
+    <strong class="text-decoration-none text-white me-2">India</strong>
+    <div class="d-flex align-items-center me-3">
+      <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-1"></span>
+      <a href="tel:{{$common.indiaCompanyDetails.contactNumber}}" class="text-white text-decoration-none">
+        {{$common.indiaCompanyDetails.contactNumber}}
+      </a>
+    </div>
+    <div class="d-flex align-items-center">
+      <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
+      <a href="mailto:{{$common.indiaCompanyDetails.email}}" class="text-white text-decoration-none">
+        {{$common.indiaCompanyDetails.email}}
+      </a>
     </div>
   </div>
+
+  <!-- Dubai Office -->
+  <div class="d-flex align-items-center">
+    <strong class="text-decoration-none text-white me-2">Dubai</strong>
+    <div class="d-flex align-items-center me-3">
+      <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-1"></span>
+      <a href="tel:{{$common.dubaiCompanyDetails.contactNumber}}" class="text-white text-decoration-none">
+        {{$common.dubaiCompanyDetails.contactNumber}}
+      </a>
+    </div>
+    <div class="d-flex align-items-center">
+      <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
+      <a href="mailto:{{$common.dubaiCompanyDetails.email}}" class="text-white text-decoration-none">
+        {{$common.dubaiCompanyDetails.email}}
+      </a>
+    </div>
+  </div>
+
+  <!-- Working Hours -->
+  <div class="d-flex align-items-center">
+    <span class="far fa-clock bg-warning text-dark rounded-circle p-2 me-2"></span>
+    <span>{{$common.workingHours}}</span>
+  </div>
+
+</div>
+
   <!-- Topbar End -->
 
   <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top shadow">
   <div class="container-fluid px-4 px-lg-5">
     <!-- Brand/Logo Section -->
     <a href="/" class="navbar-brand d-flex align-items-center">
@@ -169,20 +171,8 @@
         <li class="nav-item">
           <a class="nav-link" href="/about-us">About Us</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Services
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-            <li><a class="dropdown-item" href="/services/hvac-services">HVAC Robotic Air Duct Cleaning</a></li>
-            <li><a class="dropdown-item" href="/services/anual-maintenance-service">Annual Maintenance Service</a></li>
-            <li><a class="dropdown-item" href="/services/plumbing-services">Plumbing Services</a></li>
-            <li><a class="dropdown-item" href="/services/kitchen-cleaning-services">Kitchen Exhaust Cleaning</a></li>
-            <li><a class="dropdown-item" href="/services/cobwebs-removal-services">Industrial Cobwebs Removal</a></li>
-            <li><a class="dropdown-item" href="/services/machine-cleaning-services">Machine Cleaning</a></li>
-            <li><a class="dropdown-item" href="/services/electrical-services">Electrical Services</a></li>
-            <li><a class="dropdown-item" href="/services/painting-services">Painting Services</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="/services">Our Services</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/products">Products</a>
@@ -198,7 +188,7 @@
       <!-- Social Media & CTA Section -->
       <div class="navbar-actions d-flex align-items-center">
         <!-- Social Media Icons (Desktop Only) -->
-        <div class="social-links d-none d-lg-flex me-3">
+        <!-- <div class="social-links d-none d-lg-flex me-3">
           <a href="{{$common.socialMediaHandlers.facebook}}" target="_blank" class="social-link me-2" aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
@@ -211,7 +201,7 @@
           <a href="{{$common.socialMediaHandlers.instagram}}" target="_blank" class="social-link" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
-        </div>
+        </div> -->
         
         <!-- CTA Button -->
         <a href="/contact-us" class="btn btn-primary btn-sm">
@@ -231,81 +221,98 @@
   </div>
 
   <!-- Footer Start -->
-  <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-3">
-      <div class="row g-5">
-        <div class="col-lg-4 col-md-6">
-          <h5 class="text-light mb-4">Indian Office</h5>
-          <p><i class="fa fa-map-marker-alt me-3"></i>{{$common.indiaCompanyDetails.address}}</p>
-          <div>
-            <a href="tel:{{ $common.indiaCompanyDetails.contactNumber }}">
-              <i class="fa fa-phone-alt me-3"></i>
-              {{$common.indiaCompanyDetails.contactNumber}}
-            </a>
-          </div>
-          <div>
-            <a target="_blank" href="https://api.whatsapp.com/send?phone={{$common.indiaCompanyDetails.whatsappNumberDetails.number}}">
-              <i class="fa-brands fa-whatsapp fa-lg me-3 me-3" style="color: #1b9333;"></i>
-              {{$common.indiaCompanyDetails.whatsappNumberDetails.display}}
-            </a>
-          </div>
-          <div>
-            <i class="fa fa-envelope me-3"></i>
-            <a href="mailto:{{ $common.indiaCompanyDetails.email }}">{{$common.indiaCompanyDetails.email}}</a>
-          </div>
+  <div class="container-fluid bg-dark text-white pt-5 wow fadeIn" data-wow-delay="0.1s">
+  <div class="container py-4">
+    <div class="row g-5">
+
+      <!-- India Office -->
+      <div class="col-lg-4 col-md-6">
+        <h5 class="text-light mb-3">Indian Office</h5>
+        <p class="mb-2"><i class="fa fa-map-marker-alt me-2 text-primary"></i>{{$common.indiaCompanyDetails.address}}</p>
+        <div class="d-flex align-items-center mb-2">
+          <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-2"></span>
+          <a href="tel:{{ $common.indiaCompanyDetails.contactNumber }}" class="text-white text-decoration-none">
+            {{$common.indiaCompanyDetails.contactNumber}}
+          </a>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <h5 class="text-light mb-4">Dubai Office</h5>
-          <p><i class="fa fa-map-marker-alt me-3"></i>{{$common.dubaiCompanyDetails.address}}</p>
-          <div>
-            <a href="tel:{{ $common.dubaiCompanyDetails.contactNumber }}" class="block mb-1">
-              <i class="fa fa-phone-alt me-3"></i>
-              {{$common.dubaiCompanyDetails.contactNumber}}
-            </a>
-          </div>
-          <div>
-            <a class="block"
-            target="_blank" href="https://api.whatsapp.com/send?phone={{$common.dubaiCompanyDetails.whatsappNumberDetails.number}}">
-              <i class="fa-brands fa-whatsapp fa-lg me-3" style="color: #1b9333;"></i>
-              {{$common.dubaiCompanyDetails.whatsappNumberDetails.display}}
-            </a>
-          </div>
-          <div>
-            <i class="fa fa-envelope me-3"></i>
-            <a href="mailto:{{ $common.dubaiCompanyDetails.email }}">{{$common.dubaiCompanyDetails.email}}</a>
-          </div>
+        <div class="d-flex align-items-center mb-2">
+          <span class="fa-brands fa-whatsapp bg-success text-white rounded-circle p-2 me-2"></span>
+          <a target="_blank" href="https://api.whatsapp.com/send?phone={{$common.indiaCompanyDetails.whatsappNumberDetails.number}}" class="text-white text-decoration-none">
+            {{$common.indiaCompanyDetails.whatsappNumberDetails.display}}
+          </a>
         </div>
-        <div class="col-lg-2 col-md-6">
-          <h5 class="text-light mb-4">Quick Links</h5>
-          <a class="btn btn-link" href="/about-us">About Us</a>
-          <a class="btn btn-link" href="/contact-us">Contact Us</a>
-          <a class="btn btn-link" href="/services">Our Services</a>
-        </div>
-        <div class="col-lg-2 col-md-6">
-          <h5 class="text-light mb-4">Follow Us</h5>
-          <div class="d-flex flex-wrap">
-            <a class="btn btn-square rounded-circle bg-light text-primary me-2" target="_blank"
-              href="{{$common.socialMediaHandlers.facebook}}" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-square rounded-circle bg-light text-primary me-2" target="_blank"
-              href="{{$common.socialMediaHandlers.youtube}}" aria-label="Subscribe to our YouTube channel"><i class="fab fa-youtube"></i></a>
-            <a class="btn btn-square rounded-circle bg-light text-primary me-2" target="_blank"
-              href="{{$common.socialMediaHandlers.linkedin}}" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a class="btn btn-square rounded-circle bg-light text-primary me-0" target="_blank"
-              href="{{$common.socialMediaHandlers.instagram}}" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
+        <div class="d-flex align-items-center">
+          <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
+          <a href="mailto:{{ $common.indiaCompanyDetails.email }}" class="text-white text-decoration-none">
+            {{$common.indiaCompanyDetails.email}}
+          </a>
         </div>
       </div>
+
+      <!-- Dubai Office -->
+      <div class="col-lg-4 col-md-6">
+        <h5 class="text-light mb-3">Dubai Office</h5>
+        <p class="mb-2"><i class="fa fa-map-marker-alt me-2 text-primary"></i>{{$common.dubaiCompanyDetails.address}}</p>
+        <div class="d-flex align-items-center mb-2">
+          <span class="fa fa-phone-alt bg-primary text-white rounded-circle p-2 me-2"></span>
+          <a href="tel:{{ $common.dubaiCompanyDetails.contactNumber }}" class="text-white text-decoration-none">
+            {{$common.dubaiCompanyDetails.contactNumber}}
+          </a>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+          <span class="fa-brands fa-whatsapp bg-success text-white rounded-circle p-2 me-2"></span>
+          <a target="_blank" href="https://api.whatsapp.com/send?phone={{$common.dubaiCompanyDetails.whatsappNumberDetails.number}}" class="text-white text-decoration-none">
+            {{$common.dubaiCompanyDetails.whatsappNumberDetails.display}}
+          </a>
+        </div>
+        <div class="d-flex align-items-center">
+          <span class="far fa-envelope-open bg-success text-white rounded-circle p-2 me-1"></span>
+          <a href="mailto:{{ $common.dubaiCompanyDetails.email }}" class="text-white text-decoration-none">
+            {{$common.dubaiCompanyDetails.email}}
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <h5 class="text-light mb-3">Quick Links</h5>
+        <div class="d-flex flex-column">
+          <a class="text-white text-decoration-none mb-2" href="/about-us">About Us</a>
+          <a class="text-white text-decoration-none mb-2" href="/contact-us">Contact Us</a>
+          <a class="text-white text-decoration-none" href="/services">Our Services</a>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-lg-2 col-md-6">
+        <h5 class="text-light mb-3">Follow Us</h5>
+        <div class="d-flex flex-wrap">
+          <a class="btn btn-square rounded-circle bg-light text-primary me-2 mb-2" target="_blank"
+            href="{{$common.socialMediaHandlers.facebook}}" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-square rounded-circle bg-light text-danger me-2 mb-2" target="_blank"
+            href="{{$common.socialMediaHandlers.youtube}}" aria-label="Subscribe to our YouTube channel"><i class="fab fa-youtube"></i></a>
+          <a class="btn btn-square rounded-circle bg-light text-primary me-2 mb-2" target="_blank"
+            href="{{$common.socialMediaHandlers.linkedin}}" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-square rounded-circle bg-light text-danger me-2 mb-2" target="_blank"
+            href="{{$common.socialMediaHandlers.instagram}}" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
     </div>
-    <div class="container-fluid copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-            &copy; <a href="#"><span style="color: #FFD700">{{ .Site.Params.companyName }}</span></a>, All Right Reserved.
-          </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="container-fluid bg-dark border-top border-secondary py-3 mt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center text-white small">
+          &copy; <a href="#" class="text-warning">{{ .Site.Params.companyName }}</a>, All Rights Reserved.
         </div>
       </div>
     </div>
   </div>
+</div>
+
   <!-- Footer End -->
 
   <!-- Back to Top -->

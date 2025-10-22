@@ -1,0 +1,42 @@
+[
+  {
+    "title": "HVAC Robotic Air Duct Cleaning",
+    "image": "/images/services/duct-cleaning-tech-1.jpg",
+    "description": "Professional robotic air duct cleaning to improve air quality and HVAC efficiency."
+  },
+  {
+    "title": "Annual Maintenance Contract of HVAC",
+    "image": "/images/services/amc.jpg",
+    "description": "Comprehensive AMC services for smooth and reliable HVAC system operation."
+  },
+  {
+    "title": "Plumbing Services",
+    "image": "/images/services/plumber.jpg",
+    "description": "Expert plumbing solutions for installation, repair, and maintenance."
+  },
+  {
+    "title": "Kitchen Exhaust Cleaning",
+    "image": "/images/services/kitchen-service.jpg",
+    "description": "Professional cleaning of kitchen exhausts to ensure hygiene and safety."
+  },
+  {
+    "title": "Industrial Cobwebs Removal Services",
+    "image": "/images/services/cobwebs-cleaning-services.jpg",
+    "description": "Remove cobwebs from industrial spaces for a clean and safe environment."
+  },
+  {
+    "title": "Machine Cleaning",
+    "image": "/images/services/industrial-machinery-cleaning.jpg",
+    "description": "Industrial machinery cleaning services to maintain productivity and safety."
+  },
+  {
+    "title": "Electrical Services",
+    "image": "/images/services/service-4.jpg",
+    "description": "Comprehensive electrical services for residential and industrial setups."
+  },
+  {
+    "title": "Painting Services",
+    "image": "/images/services/painting-services.jpeg",
+    "description": "Professional painting services for interior and exterior spaces."
+  }
+]
