@@ -15,6 +15,11 @@
     "description": "Your trusted partner for all floor tile types and marble fixing work, done right the first time"
   },
   {
+    "title": "Plumbing Services",
+    "image": "/images/services/plumbingService.png",
+    "description": " Your trusted partner for every plumbing need, from leaky faucets to major pipe repairs, we ensure smooth, worry-free solutions every time"
+  },
+  {
     "title": "Masonry Services",
     "image": "/images/services/masonaryService.jpg",
     "description": "Perfect Walls, Seamless Finishes – Professional Masonry, Putty Work, and Silicone Sealing Services"
@@ -31,8 +36,13 @@
   },
   {
     "title": "Industrial Cleaning Services",
-    "image": "/images/services/industrialCobWebCleaning.jpg", 
+    "image": "/images/services/industrialCleaningService.png", 
     "description": "From Factories to Warehouses – Professional Industrial Cleaning Services"
+  },
+  {
+    "title": "Hvac Duct Cleaning Services",
+    "image": "/images/services/hvac.png", 
+    "description": "Healthier Air Starts Here – Trusted HVAC Duct Cleaning for Every Environment"
   },
   {
     "title": "Carpentry Services",
@@ -46,7 +56,7 @@
   },
   {
     "title": "Kitchen exhaust Duct Cleaning Services",
-    "image": "/images/services/painting-services.jpg",
+    "image": "/images/services/kitchen-services.jpg",
     "description": "Professional Kitchen Exhaust Duct Cleaning for Residential, Commercial, and Industries"
   },
   {
@@ -61,7 +71,7 @@
   },
   {
     "title": "AMC for Industrial shed Cleaning and Hvac Duct Cleaning",
-    "image": "/images/services/painting-services.jpg",
+    "image": "/images/services/amc.png",
     "description": "One Contract, Complete Care – Annual Cleaning for Industrial Sheds & HVAC Ducts"
   }
 ]

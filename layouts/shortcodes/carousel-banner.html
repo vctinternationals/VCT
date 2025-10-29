@@ -1,0 +1,32 @@
+<div id="header-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner">
+        {{ range $index, $slide := site.Data.carousel_image_config }}
+        <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+            <img style="height: 550px" class="w-100" src="{{ $slide.image }}" alt="Image" />
+            <div class="carousel-caption">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7 pt-5">
+                            <h1 class="display-4 text-white mb-4 animated slideInDown">
+                                {{ $slide.title }}
+                            </h1>
+                            {{ with $slide.description }}
+                            <p class="text-white animated fadeInUp">{{ . }}</p>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
