@@ -15,7 +15,7 @@
   <!-- End Google Tag Manager -->
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Params.siteTitle }}</title>
   <meta name="description"
     content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.siteDescription }}{{ end }}">
@@ -91,10 +91,6 @@
 
   <!-- Template Javascript -->
   <script src="/js/main.js"></script>
-
-  {{ if and .Site.Params.recaptchaEnabled (eq .RelPermalink "/contact-us/") }}
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  {{ end }}
 
 </head>
 

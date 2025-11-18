@@ -18,6 +18,7 @@
           <p class="text-muted">Fill out the form below and we'll get back to you shortly</p>
       </div>
       <input hidden name="apiKey" id="apiKey" value="">
+      <input hidden name="g-recaptcha-response" id="g-recaptcha-response" value="">
       <input hidden name="company-contact-india" id="company-contact-india"
         value="{{$common.indiaCompanyDetails.contactNumber}}">
       <input hidden name="company-contact-dubai" id="company-contact-dubai"
@@ -75,7 +76,7 @@
 
           <div class="col-md-8">
             <div class="d-block">Please verify you are not arobot.</div>
-            <div class="g-recaptcha" data-sitekey="{{ .Site.Params.recaptchaSiteKey }}"></div>
+            <div class="g-recaptcha" data-sitekey="{{ .Site.Params.recaptchaSiteKey }}" data-callback="onCaptchaSuccess"></div>
             <div id="recaptchaError" style="display:none; color: red;">Please click on checkbox.</div>
           </div>
           <div class="col-md-12 mt-5 text-center">
@@ -158,6 +159,9 @@
 </div>
 </div>
 <!-- Contact End -->
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- Your code -->
 <script>
   (function () {
     'use strict';
@@ -254,6 +258,10 @@
       }
     }
 
+    function onCaptchaSuccess(token) {
+        document.getElementById('g-recaptcha-response').value = token;
+    }
+
     form.addEventListener('submit', function (event) {
       // Now check normal form validation
       if (!form.checkValidity()) {
@@ -268,7 +276,9 @@
       resolveApiKey();
 
       // reCAPTCHA Validation First
-      var token = grecaptcha.getResponse ? grecaptcha.getResponse() : "";
+      
+      const token = document.getElementById("g-recaptcha-response").value;
+
       var recaptchaError = document.getElementById('recaptchaError');
       if (!token) {
         event.preventDefault();

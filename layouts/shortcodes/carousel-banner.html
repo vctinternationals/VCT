@@ -2,7 +2,7 @@
     <div class="carousel-inner">
         {{ range $index, $slide := site.Data.carousel_image_config }}
         <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
-            <img style="height: 550px" class="w-100" src="{{ $slide.image }}" alt="Image" />
+            <img class="d-block w-100" src="{{ $slide.image }}" alt="Image" />
             <div class="carousel-caption">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -30,3 +30,20 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+
+<style>
+ /* For laptops and above */
+@media (min-width: 992px) {
+  #header-carousel .carousel-item {
+    position: relative;
+    min-height: 75vh;
+  }
+
+  #header-carousel .carousel-item img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    object-fit: fill;
+  }
+}
+</style>
