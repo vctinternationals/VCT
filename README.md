@@ -524,8 +524,3 @@ This project is proprietary to VCT Technical Services. All rights reserved.
 **Built with ❤️ using Hugo, Bootstrap, and Firebase**
 
 
-
-
-STATICFORMS
-SiteKey:6LdzPBAsAAAAANVSKWkrdBtANAC2mNApEeFz6zqy
-SecretKey:6LdzPBAsAAAAADMEji0oE5aOfCg528OCvadRkLHG
